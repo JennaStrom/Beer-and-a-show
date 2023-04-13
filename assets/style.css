@@ -1,0 +1,13 @@
+
+/* temporarily */
+header {
+    background-color: aquamarine;
+    text-align: center;
+}
+
+#quote {
+    margin-left: 45%;
+}
+.hide-btn {
+    display: none;
+}
