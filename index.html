@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beer and a Show</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
+
 <body>
-    
+    <header>
+        <img src="" alt="">
+        <h1>Beer and a Show</h1>
+    </header>
+    <div id="quote">....motto....</div>
+    <main>
+        <div id="search-div">
+            <form>
+                <select name="list-type" id="">
+                    <option value="">>Choose your search target:</option>
+                    <option value="events">only events</option>
+                    <option value="breweries">only breweries:</option>
+                    <option value="both">both events and breweries</option>
+                </select>
+                <input type="text" placeholder="Search by city or a zipcode">
+                <button type="submit">Search</button>
+            </form>
+
+        </div>
+
+        <div id="event-container">
+            <h2 id="eventList-heading"></h2>
+            <!--div boxes for a list of events will be created and appended here  -->
+        </div>
+
+        <div id="brewery-container">
+            <h2 id="breweryList-heading"></h2>
+
+            <div id="listOf-brewieries">
+                <!--div boxes of a list of breweries will be appended here  -->
+            </div>
+            <!-- when the customer's review button get clicked it displays all the comments about each breweries  -->
+            <button id="review-btn" class="hide-btn"></button>
+            <!--a div with a list of customer review of the breweries will be appended here.   -->
+            <div class="cutomer-review"></div>
+        </div>
+
+        <div id="listOfThings-todo">
+            <!-- when the things to do button get clicked it displays all the information/activities in the chosen city -->
+            <button id="things-todo-btn" class="hide-btn"></button>
+            <!--div with a list of events will be appended here  -->
+        </div>
+
+    </main>
+
+
+    <script src="./assets/script.js"></script>
 </body>
+
 </html>
