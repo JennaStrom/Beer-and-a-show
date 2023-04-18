@@ -12,19 +12,19 @@ var apiKey = "MBTqnGkdcHr9yyjvkUMAekQ48KJAGxYA";
 var city;
 var userSelection = document.getElementById('my-selection');
 var userCitySearch = document.getElementById('city-search');
-var searchButton = document.getElementById('search-button')
+var searchButton = document.querySelector('#search-button')
 var breweriesContainer = document.getElementById('brewery-container')
 
 
-function initMap() {
-    var autoSearch = new google.maps.places.Autocomplete(userCitySearch)
+// function initMap() {
+//     var autoSearch = new google.maps.places.Autocomplete(userCitySearch)
 
-    userCitySearch.addEventListener('input', function(){
-        var inputType = {input: userCitySearch.value, types: ['(cities)']}
+//     userCitySearch.addEventListener('input', function(){
+//         var inputType = {input: userCitySearch.value, types: ['(cities)']}
 
-        autoSearch.getPlacePredictions(inputType, function(){s})
-    })
-}
+//         autoSearch.getPlacePredictions(inputType, function(){s})
+//     })
+// }
 
 
 
@@ -35,7 +35,7 @@ function initMap() {
 // }
 
 
-
+$("#search-button").on("click", displayBrewery)
 searchButton.addEventListener('click', function (event) {
     event.preventDefault()
 
@@ -58,9 +58,10 @@ searchButton.addEventListener('click', function (event) {
 })
 
 city = userCitySearch.value.trim()
-
+console.log(userCitySearch.value)
+console.log (city)
 function displayBrewery() {
-    
+    city = userCitySearch.value.trim()
     fetch('https://api.openbrewerydb.org/v1/breweries?by_city=' + city + '&per_page=5')
         .then(res => res.json())
         .then(data => {
@@ -71,28 +72,32 @@ function displayBrewery() {
                 
 
                 //Create DOM elements 
-                var eachBreweryDiv = document.createElement('div')
-                var name = document.createElement('p')
-                var type = document.createElement('p')
-                var address = document.createElement('p')
-                var phone = document.createElement('p')
-                var website = document.createElement('p')
-                var reviewButton = document.createElement('button')
+                //var eachBreweryDiv = document.createElement('div')
+                var name = ''
+                var type = ''
+                var address = ''
+                var phone = ''
+                var website = ''
+                //var reviewButton = document.createElement('button')
 
                 //Assign the values extracted from the data to the variables created
-                name.textContent = 'Name: ' + data[i].name
-                type.textContent = 'Type: ' + data[i].brewery_type
-                address.textContent = 'Address: ' + data[i].address_1
-                phone.textContent = 'Phone: ' + data[i].phone
-                website.textContent = 'Website: ' + data[i].website_url
+                name = 'Name: ' + data[i].name
+                type = 'Type: ' + data[i].brewery_type
+                address = 'Address: ' + data[i].address_1
+                phone = 'Phone: ' + data[i].phone
+                website = 'Website: ' + data[i].website_url
 
                 //Append the 
-                eachBreweryDiv.append(name, type, address,  phone,  website)
-                breweriesContainer.append(eachBreweryDiv, reviewButton)
+                $("#name"+i).html(name)
+                $("#type"+i).html(type)
+                $("#address"+i).html(address)
+                $("#phone"+i).html(phone)
+                $("#website"+i).html(website)
+                //breweriesContainer.append(eachBreweryDiv, reviewButton)
                 
                
 
-                eachBreweryDiv.classList.add("w-2/5")
+                //eachBreweryDiv.classList.add("flex w-2/5")
                 // eachBreweryDiv.setAttribute('style', 'border-style: solid')// no effect
 
 
