@@ -14,54 +14,53 @@ var userSelection = document.getElementById('my-selection');
 var userCitySearch = document.getElementById('city-search');
 var searchButton = document.getElementById('search-button')
 var breweriesContainer = document.getElementById('brewery-container')
-var eventsContainer = document.getElementById('brewery-container')
 
-
-
-
- function hitSearch  (){
-    searchButton.addEventListener('click', function (event) {
-    event.preventDefault()
-
-    userTargetService = userSelection.value.trim()
-    // breweriesContainer.innerHTML = ''
-    eventsContainer.innerHTML = ''  // merged later
-
-    // if logic to display result based on the user selection ?????
-
-    if (userTargetService === 'breweries') {
-        displayBrewery()
-    }else if (userTargetService === 'events') {
-        displayEvent()
-    }else {
-        displayBrewery()
-        // displayEvent()
-    }
-
-    // displayThingsToDo()
-})
-}
-    
 
 function initMap() {
     var autoSearch = new google.maps.places.Autocomplete(userCitySearch)
 
-    var myMap = new google.maps.Map (document.createElement('div'), {
-        zoom: 8,
-        centre: {lat:44.9778,lng: 93.2650 } //make Minneapolis our default
-    })
-
     userCitySearch.addEventListener('input', function(){
-        
-        hitSearch()
+        var inputType = {input: userCitySearch.value, types: ['(cities)']}
+
+        autoSearch.getPlacePredictions(inputType, function(){s})
     })
 }
 
 
+
+// function bothTargets () {
+//     displayBrewery()
+//     displayEvent()
+//     displayThingsToDo()
+// }
+
+
+
+searchButton.addEventListener('click', function (event) {
+    event.preventDefault()
+
+
+    userTargetService = userSelection.value.trim()
+    // breweriesContainer.innerHTML = ''
+    // eventsContainer.innerHTML = ''  // merged later
+    // if logic to display result based on the user selection
+
+    // if (userTargetService === 'breweries') {
+    //     displayBrewery()
+    // }else if (userTargetService === 'events') {
+    //     displayEvent()
+    // }else {
+    //     bothTargets()
+    // }
+    displayBrewery()
+    // displayThingsToDo()
+
+})
+
+city = userCitySearch.value.trim()
+
 function displayBrewery() {
-
-    city = userCitySearch.value.trim()
-
+    
     fetch('https://api.openbrewerydb.org/v1/breweries?by_city=' + city + '&per_page=5')
         .then(res => res.json())
         .then(data => {
@@ -90,9 +89,17 @@ function displayBrewery() {
                 //Append the 
                 eachBreweryDiv.append(name, type, address,  phone,  website)
                 breweriesContainer.append(eachBreweryDiv, reviewButton)
+                
                
 
-               
+                eachBreweryDiv.classList.add("w-2/5")
+                // eachBreweryDiv.setAttribute('style', 'border-style: solid')// no effect
+
+
+                // reviewButton.addEventListener('click', function(){
+                //     //fetch review of brewe
+                // })
+
               
                 
 
@@ -111,30 +118,18 @@ function displayBrewery() {
 
 
         })
- hitSearch()
-
 }
 
 
+function displayThingsToDo (){
 
-{/* <script>
-  (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-    key: "YOUR_API_KEY_HERE",
-    // Add other bootstrap parameters as needed, using camel case.
-    // Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
-  });
-</script> */}
+    https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=restaurant&name=harbour&key=YOUR_API_KEY
 
+fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json')
+    .then(res => res.json())
+    .then(data => console.log(data))
 
-// function displayThingsToDo (){
-
-//    
-
-// fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json')
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-
-// }
+}
 
 // var customerReview;
 
