@@ -21,14 +21,14 @@
         <div class="flex justify-center ">
         <div id="search-div" class="main-form flex items-center bg-gray-100 justify-center w-3/4 shadow-xl" >
             <form class="p-3">
-                <select name="list-type" id="" class="my-4 w-full shadow-md">
+                <select name="list-type" id="my-selection" class="my-4 w-full shadow-md">
                     <option value="">Choose your search target:</option>
                     <option value="events">only events</option>
-                    <option value="breweries">only breweries:</option>
+                    <option value="breweries">only breweries</option>
                     <option value="both">both events and breweries</option>
                 </select>
                 <input type="text" id="city-search" placeholder="Search by city" class="my-4 w-full shadow-md">
-                <button type="submit" class="my-4 w-full hover:border-black shadow-md">Search</button>
+                <button id="search-button" type="submit" class=" my-4 w-full hover:border-black shadow-md ">Search</button>
             </form>
 
         </div>
@@ -46,11 +46,14 @@
                 <!--div boxes of a list of breweries will be appended here  -->
             </div>
             <!-- when the customer's review button get clicked it displays all the comments about each breweries  -->
-            <button id="review-btn" class="hide-btn"></button>
+            <!-- <button id="review-btn" class="hide-btn"></button> -->
             <!--a div with a list of customer review of the breweries will be appended here.   -->
-            <div class="cutomer-review"></div>
+            
         </div>
         </div>
+        <div id="map-container"></div>
+        
+        <div class="cutomer-review"></div>
         <div id="listOfThings-todo">
             <!-- when the things to do button get clicked it displays all the information/activities in the chosen city -->
             <button id="things-todo-btn" class="hide-btn"></button>
@@ -61,6 +64,12 @@
 
 
     <script src="./assets/script.js"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlat17P_RNHtWDKcyqXPwNrq5p78AUymk&libraries=places"></script> -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlat17P_RNHtWDKcyqXPwNrq5p78AUymk&libraries=places&callback=initMap"></script>
+
+
+
+
 </body>
 
 </html>
