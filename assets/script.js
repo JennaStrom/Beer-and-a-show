@@ -88,11 +88,11 @@ function displayBrewery() {
                 website = 'Website: ' + data[i].website_url
 
                 //Append the 
-                $("#name"+i).html(name)
-                $("#type"+i).html(type)
-                $("#address"+i).html(address)
-                $("#phone"+i).html(phone)
-                $("#website"+i).html(website)
+                $("#name"+i).html(name + ' ')
+                $("#type"+i).html(type + ' ')
+                $("#address"+i).html(address + ' ')
+                $("#phone"+i).html(phone + ' ')
+                $("#website"+i).html(website + ' ')
                 //breweriesContainer.append(eachBreweryDiv, reviewButton)
                 
                
