@@ -33,7 +33,6 @@ $("#search-button").on("click", displayBrewery)
 searchButton.addEventListener('click', function (event) {
     event.preventDefault()
 
-
     userTargetService = userSelection.value.trim()
     // breweriesContainer.innerHTML = ''
     // eventsContainer.innerHTML = ''  // merged later
@@ -47,31 +46,32 @@ searchButton.addEventListener('click', function (event) {
     //     bothTargets()
     // }
     //displayBrewery()
-   
+    displayEvents()
+
     // displayThingsToDo()
 })
 
-$("#search-button").on("click", displayEvents)
-searchButton.addEventListener('click', function (event) {
-    event.preventDefault()
+// $("#search-button").on("click", displayEvents)
+// searchButton.addEventListener('click', function (event) {
+//     event.preventDefault()
 
 
-    userTargetService = userSelection.value.trim()
-    // breweriesContainer.innerHTML = ''
-    // eventsContainer.innerHTML = ''  // merged later
-    // if logic to display result based on the user selection
+//     userTargetService = userSelection.value.trim()
+//     // breweriesContainer.innerHTML = ''
+//     // eventsContainer.innerHTML = ''  // merged later
+//     // if logic to display result based on the user selection
 
-    // if (userTargetService === 'breweries') {
-    //     displayBrewery()
-    // }else if (userTargetService === 'events') {
-    //     displayEvent()
-    // }else {
-    //     bothTargets()
-    // }
-    //displayEvents()
+//     // if (userTargetService === 'breweries') {
+//     //     displayBrewery()
+//     // }else if (userTargetService === 'events') {
+//     //     displayEvent()
+//     // }else {
+//     //     bothTargets()
+//     // }
+//     //displayEvents()
    
-    // displayThingsToDo()
-})
+//     // displayThingsToDo()
+// })
 
 city = userCitySearch.value.trim()
 console.log(userCitySearch.value)
@@ -133,27 +133,26 @@ function displayEvents() {
         .then(data => {
             console.log(data)
 
-            for (var i = 0; i < data.length; i++) {
+            for (var i = 0; i < data._embedded.events.length; i++) {
                
                 var eventName = ''
-                var eventImage = ("img")
+               // var eventImage = ("img")
                 var eventVenue = ''
                 var eventDate = ''
-                var eventUrl = ("href")
+               // var eventUrl = ("href")
 
-                eventName = data.events[i].name
+                eventName = data._embedded.events[i].name
                 console.log("this")
                 console.log(eventName)
-                eventImage.setAttribute('src', data._embedded.events[i].images[0].url)
-                eventVenue = "Venue: " + data._embedded.events[i]._embedded.venues.name
+               // eventImage.setAttribute('src', data._embedded.events[i].images[0].url)
+                eventVenue = "Venue: " + data._embedded.events[i]._embedded.venues[0].name
                 eventDate = "Date: " + data._embedded.events[i].dates.start.localDate
-                eventUrl.setAttribute('href', data._embedded.events[i].url)
+               // eventUrl.setAttribute('href', data._embedded.events[i].url)
 
-                $("#event-name"+i).html(eventName + ' ')
+                $("#event-name"+i).html(eventName + '')
                 //img
-                $("#event-venue"+i).html(eventVenue + ' ')
-                $("#event-date"+i).html(eventDate + ' ')
-                $("#event-name"+i).html(eventName + ' ')
+                $("#event-venue"+i).html(eventVenue + '')
+                $("#event-date"+i).html(eventDate + '')
                 //url
             }
         })
