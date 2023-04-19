@@ -89,19 +89,15 @@ function displayBrewery() {
 
                 //Create DOM elements 
                 //var eachBreweryDiv = document.createElement('div')
-                var name = ''
-                var type = ''
-                var address = ''
-                var phone = ''
-                var website = ''
+                
                 //var reviewButton = document.createElement('button')
 
                 //Assign the values extracted from the data to the variables created
-                name = 'Name: ' + data[i].name
-                type = 'Type: ' + data[i].brewery_type
-                address = 'Address: ' + data[i].address_1
-                phone = 'Phone: ' + data[i].phone
-                website = 'Website: ' + data[i].website_url
+                var name = 'Name: ' + data[i].name
+                var type = 'Type: ' + data[i].brewery_type
+                var address = 'Address: ' + data[i].address_1
+                var phone = 'Phone: ' + data[i].phone
+                var website = 'Website: ' + data[i].website_url
 
                 //Append the 
                 $("#name"+i).html(name + ' ')
@@ -136,10 +132,10 @@ function displayEvents() {
             for (var i = 0; i < data._embedded.events.length; i++) {
                
                 var eventName = ''
-               // var eventImage = ("img")
+                var eventImage = data._embedded.events[i].images[0].url
                 var eventVenue = ''
                 var eventDate = ''
-               // var eventUrl = ("href")
+                var eventUrl = data._embedded.events[i].url
 
                 eventName = data._embedded.events[i].name
                 console.log("this")
@@ -150,10 +146,10 @@ function displayEvents() {
                // eventUrl.setAttribute('href', data._embedded.events[i].url)
 
                 $("#event-name"+i).html(eventName + '')
-                //img
+                $("#event-image"+i).html(" " +"<img src="+eventImage+">")
                 $("#event-venue"+i).html(eventVenue + '')
                 $("#event-date"+i).html(eventDate + '')
-                //url
+                $("#event-url"+i).html("<a href="+eventUrl+">"+eventUrl+"</a>")
             }
         })
 }
