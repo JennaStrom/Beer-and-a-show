@@ -97,14 +97,14 @@ function displayBrewery() {
                 var type = 'Type: ' + data[i].brewery_type
                 var address = 'Address: ' + data[i].address_1
                 var phone = 'Phone: ' + data[i].phone
-                var website = 'Website: ' + data[i].website_url
+                var website = data[i].website_url
 
                 //Append the 
                 $("#name"+i).html(name + ' ')
                 $("#type"+i).html(type + ' ')
                 $("#address"+i).html(address + ' ')
                 $("#phone"+i).html(phone + ' ')
-                $("#website"+i).html(website + ' ')
+                $("#website"+i).html("<a href="+website+">"+"Click here to visit Brewery Website")
                 $("#brewery"+i).attr("class", "border-2 border-slate-950/50")
                 //breweriesContainer.append(eachBreweryDiv, reviewButton)
                 
@@ -139,12 +139,12 @@ function displayEvents() {
                 var eventUrl = data._embedded.events[i].url
 
                 eventName = data._embedded.events[i].name
-                console.log("this")
-                console.log(eventName)
-               // eventImage.setAttribute('src', data._embedded.events[i].images[0].url)
+                // console.log("this")
+                // console.log(eventName)
+        
                 eventVenue = "Venue: " + data._embedded.events[i]._embedded.venues[0].name
                 eventDate = "Date: " + data._embedded.events[i].dates.start.localDate
-               // eventUrl.setAttribute('href', data._embedded.events[i].url)
+            
 
                 $("#event-name"+i).html(eventName + '')
                 $("#event-image"+i).html(" " +"<img src="+eventImage+">")
