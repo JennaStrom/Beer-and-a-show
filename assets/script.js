@@ -3,65 +3,123 @@
 var apiKey = "MBTqnGkdcHr9yyjvkUMAekQ48KJAGxYA";
 
 
-// // check in with openbrewery api
-// var breweryApi_url = "https://api.openbrewerydb.org/v1/breweries?by_city=new york&per_page=6" //added the city search at the end and set it to show 6/search once we get the input info all set up "https://api.openbrewerydb.org/v1/breweries?by_city=" + cityName + "&per_page=6"
-// fetch(breweryApi_url)
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-
-var city;
 var userSelection = document.getElementById('my-selection');
 var userCitySearch = document.getElementById('city-search');
 var searchButton = document.querySelector('#search-button')
 var breweriesContainer = document.getElementById('brewery-container')
+var allLinkWrapper = $('.allBrewLink')
+var mainContentContainer = $('.mainContent-container ')
 
-
-// function initMap() {
-//     var autoSearch = new google.maps.places.Autocomplete(userCitySearch)
-
-//     userCitySearch.addEventListener('input', function(){
-//         var inputType = {input: userCitySearch.value, types: ['(cities)']}
-
-//         autoSearch.getPlacePredictions(inputType, function(){s})
-//     })
-// }
+var userTargetService;
+var city;
 
 
 
-// function bothTargets () {
-//     displayBrewery()
-//     displayEvent()
-//     displayThingsToDo()
-// }
+
+// $("#search-button").on("click", displayBrewery)
+// $("#search-button").on("click", displayEvents)
 
 
-$("#search-button").on("click", displayBrewery)
+// $('#my-selection').on('onchange', function (){
+
+// })
+// userSelection.addEventListener('onchange', function ()
+// // {
+
+
+
+
 searchButton.addEventListener('click', function (event) {
     event.preventDefault()
+    // city = userCitySearch.value.trim()
+    var userTargetService = userSelection.value.trim()
 
-
-    userTargetService = userSelection.value.trim()
     // breweriesContainer.innerHTML = ''
-    // eventsContainer.innerHTML = ''  // merged later
+
     // if logic to display result based on the user selection
 
-    // if (userTargetService === 'breweries') {
-    //     displayBrewery()
-    // }else if (userTargetService === 'events') {
-    //     displayEvent()
-    // }else {
-    //     bothTargets()
-    // }
-    displayBrewery()
-    // displayThingsToDo()
+
+    if (userTargetService === 'only breweries' || userTargetService === 'both events and breweries') {
+        displayBreweries()
+    } else if (userTargetService === 'only events' || userTargetService === 'both events and breweries') {
+        displayEvents()
+        console.log()
+    } else {
+        displayBreweries()
+        displayEvents()
+
+    }
+    
 
 })
 
-city = userCitySearch.value.trim()
-console.log(userCitySearch.value)
-console.log (city)
-function displayBrewery() {
+document.addEventListener('keydown', function(event){
+    if (event.key ==13){
+        event.preventDefault()
+        var userTargetService = userSelection.value.trim()
+
+    // breweriesContainer.innerHTML = ''
+
+    // if logic to display result based on the user selection
+
+
+    if (userTargetService === 'only breweries' || userTargetService === 'both events and breweries') {
+        displayBreweries()
+    } else if (userTargetService === 'only events' || userTargetService === 'both events and breweries') {
+        displayEvents()
+        console.log()
+    } else {
+        displayBreweries()
+        displayEvents()
+
+    }
+    }
+   mainContentContainer.show()
+})
+
+
+
+function displayEvents() {
     city = userCitySearch.value.trim()
+    fetch("https://app.ticketmaster.com/discovery/v2/events.json?&city=" + city + "&size=5&apikey=" + apiKey)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+
+            for (var i = 0; i < data._embedded.events.length; i++) {
+               
+                var eventName = ''
+                var eventImage = data._embedded.events[i].images[0].url
+                var eventVenue = ''
+                var eventDate = ''
+                var eventUrl = data._embedded.events[i].url
+
+                eventName = data._embedded.events[i].name
+                // console.log("this")
+                // console.log(eventName)
+        
+                eventVenue = "Venue: " + data._embedded.events[i]._embedded.venues[0].name
+                eventDate = "Date: " + data._embedded.events[i].dates.start.localDate
+            
+
+                $("#event-name"+i).html(eventName + '')
+                $("#event-image"+i).html(" " +"<img src="+eventImage+">")
+                $("#event-image"+i).attr("class","w-32 h-32")
+                $("#event-venue"+i).html(eventVenue + '')
+                $("#event-date"+i).html(eventDate + '')
+                $("#event-url"+i).html("<a href="+eventUrl+">"+"Click Here To Visit TicketMaster For This Event"+"</a>")
+                $("#event"+i).attr("class", "border-2 border-slate-950/50")
+            }
+        })
+}
+console.log(userCitySearch.value)
+
+function displayBreweries() {
+
+    city = userCitySearch.value.trim()
+    console.log(city)
+
+
     fetch('https://api.openbrewerydb.org/v1/breweries?by_city=' + city + '&per_page=5')
         .then(res => res.json())
         .then(data => {
@@ -69,72 +127,68 @@ function displayBrewery() {
 
             //To get five list of breweries in the selected city
             for (var i = 0; i < data.length; i++) {
-                
 
-                //Create DOM elements 
-                //var eachBreweryDiv = document.createElement('div')
-                var name = ''
-                var type = ''
-                var address = ''
-                var phone = ''
-                var website = ''
-                //var reviewButton = document.createElement('button')
 
                 //Assign the values extracted from the data to the variables created
-                name = 'Name: ' + data[i].name
-                type = 'Type: ' + data[i].brewery_type
-                address = 'Address: ' + data[i].address_1
-                phone = 'Phone: ' + data[i].phone
-                website = 'Website: ' + data[i].website_url
+                var name = 'Name: ' + data[i].name
+                var type = 'Type: ' + data[i].brewery_type
+                var address = 'Address: ' + data[i].address_1
+                var phone = 'Phone: ' + data[i].phone
+                var website = 'Website: ' + data[i].website_url
 
-                //Append the 
-                $("#name"+i).html(name + ' ')
-                $("#type"+i).html(type + ' ')
-                $("#address"+i).html(address + ' ')
-                $("#phone"+i).html(phone + ' ')
-                $("#website"+i).html(website + ' ')
-                //breweriesContainer.append(eachBreweryDiv, reviewButton)
-                
                
 
-                //eachBreweryDiv.classList.add("flex w-2/5")
-                // eachBreweryDiv.setAttribute('style', 'border-style: solid')// no effect
 
 
-                // reviewButton.addEventListener('click', function(){
-                //     //fetch review of brewe
-                // })
+                //Append the 
+                $("#name" + i).html(name + ' ')
+                $("#type" + i).html(type + ' ')
+                $("#address" + i).html(address + ' ')
+                $("#phone" + i).html(phone + ' ')
+                $("#website" + i).html(website + ' ')
 
-              
-                
+
+ 
+//  var myCard = $('.bg-none')
+
+// myCard.css('background-size', 'cover')
 
 
+
+
+
+        
+
+
+                $(allLinkWrapper[i]).attr('href', data[i].website_url)
+
+                allLinkWrapper.show()
+
+                // 
+                //breweriesContainer.append(eachBreweryDiv, reviewButton)
 
             }
 
 
-
-
-
-
-
-
-
-
-
         })
-}
-
-
-function displayThingsToDo (){
-
-    https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=restaurant&name=harbour&key=YOUR_API_KEY
-
-fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json')
-    .then(res => res.json())
-    .then(data => console.log(data))
+        .catch(error => {
+            console.error(error)
+            //module here to display the error on the page for the user
+        })
 
 }
+
+
+
+// function displayThingsToDo (){
+
+//     // https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=restaurant&name=harbour&key=YOUR_API_KEY
+
+// fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json')
+//     .then(res => res.json())
+//     .then(data => console.log(data))
+
+// }
 
 // var customerReview;
 
@@ -170,19 +224,3 @@ fetch('https://maps.googleapis.com/maps/api/place/nearbysearch/json')
 
 
 
-
-
-// // check in with ticketmaster api
-// var ticketmasterUrl = "https://app.ticketmaster.com/discovery/v2/events.json?&city=minneapolis&size=6&apikey=" + APIKey;
-// fetch(ticketmasterUrl)
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-
-    //things we should consider including...
-    //_embedded.events[].name --will give the name of the show
-    //_embedded.events[].dates.start.localDateTime --date and time of show
-    //_embedded.events[].images[] --image will appear
-    //_embedded.events[].url --link to get the tickets
-    //_embedded.events[]._embedded.venues.name --will list name of venue
-
-    //I think once we create a variable for the input information this is the url we should use for Ticketmaster..."https://app.ticketmaster.com/discovery/v2/events.json?&city=" + cityName + "&size=6&apikey=" + APIKey;

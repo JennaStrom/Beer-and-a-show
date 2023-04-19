@@ -11,94 +11,164 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<body class="font-serif">
+
+<body class="font-serif  ">
     <header class="p-20 text-lg justify-center bg-gradient-to-r from-sky-950 to-sky-500 h14">
         <img src="" alt="">
         <h1>Beer and a Show</h1>
     </header>
     <div id="quote" class="p-10 underline underline-offset-8">....motto....</div>
     <main>
-        <div class="flex justify-center ">
-        <div id="search-div" class="main-form flex items-center bg-gray-100 justify-center w-3/4 shadow-xl" >
-            <form class="p-3">
-                <select name="list-type" id="my-selection" class="my-4 w-full shadow-md">
-                    <option value="">Choose your search target:</option>
-                    <option value="events">only events</option>
-                    <option value="breweries">only breweries</option>
-                    <option value="both">both events and breweries</option>
-                </select>
-                <input type="text" id="city-search" placeholder="Search by city" class="my-4 w-full shadow-md">
-                <button id="search-button" type="submit" class=" my-4 w-full hover:border-black shadow-md ">Search</button>
-            </form>
+        <!-- to scroll in all direction if needed -->
+        <div class="main-container overflow-scroll ... overflow-auto md:overflow-scroll">
+            <div class="flex justify-center ">
+                <div id="search-div" class="main-form flex items-center bg-gray-100 justify-center w-3/4 shadow-xl">
+                    <form class="p-3">
+                        <select name="list-type" id="my-selection" class="my-4 w-full shadow-md">
+                            <option value="">Choose your search target:</option>
+                            <option value="events">only events</option>
+                            <option value="breweries">only breweries</option>
+                            <option value="both">both events and breweries</option>
+                        </select>
+                        <input type="text" id="city-search" placeholder="Search by city" class="my-4 w-full shadow-md">
+                        <button id="search-button" type="submit"
+                            class=" my-4 w-full hover:border-black shadow-md ">Search</button>
+                    </form>
 
-        </div>
-        </div>
-        <div class="flex  mt-10">
-        <div id="event-container" class="flex justify-center  border-2 border-slate-950/50">
-            <h2 id="eventList-heading">Events Near Your Destination:</h2>
-            <!--div boxes for a list of events will be created and appended here  -->
-        </div>
+                </div>
+            </div>
+            <div class="flex justify-between mt-10">
+                <div id="event-container" class="flex flex-col justify-center w-1/2 border-2 border-slate-950/50">
+                    <h2 id="eventList-heading">Events Near Your Destination:</h2>
+                    <!--div boxes for a list of events will be created and appended here  -->
+                    
+                        <div id="event0" >
+                            <p id="event-name0"></p>
+                            <p id="event-image0"></p>
+                            <p id="event-venue0"></p>
+                            <p id="event-date0"></p>
+                            <p id="event-url0"></p>
+                        </div>
+                        <div id="event1" >
+                            <p id="event-name1"></p>
+                            <p id="event-image1"></p>
+                            <p id="event-venue1"></p>
+                            <p id="event-date1"></p>
+                            <p id="event-url1"></p>
+                        </div>
+                        <div id="event2">
+                            <p id="event-name2"></p>
+                            <p id="event-image2"></p>
+                            <p id="event-venue2"></p>
+                            <p id="event-date2"></p>
+                            <p id="event-url2"></p>
+                        </div>
+                        <div id="event3">
+                            <p id="event-name3"></p>
+                            <p id="event-image3"></p>
+                            <p id="event-venue3"></p>
+                            <p id="event-date3"></p>
+                            <p id="event-url3"></p>   
+                        </div>
+                        <div id="event4">
+                            <p id="event-name4"></p>
+                            <p id="event-image4"></p>
+                            <p id="event-venue4"></p>
+                            <p id="event-date4"></p>
+                            <p id="event-url4"></p>
+                        </div>
+                
+                </div>
 
-        <div id="brewery-container" class="flex flex-col justify-center  border-2 border-slate-950/50">
-            <h2 id="breweryList-heading">Breweries Near Your Desination:</h2>
-            <div class="">
-            <div id="brewery0" class="border-2 border-slate-950/50">
-                <p id="name0"></p>
-                <p id="type0"></p>
-                <p id="address0"></p>
-                <p id="phone0"></p>
-                <p id="website0"></p>
+                <div id="brewery-container" class=" flex flex-col justify-between w-1/2 border-2  border-slate-950/50">
+                    <h2 id="breweryList-heading">Breweries Near Your Desination:</h2>
+                    <!-- <div class=""> we do not need the second div -->
+                    <!-- get every box clickable leading to the the brewery's web. how????  -->
+                    <a id="brewLink0" class="allBrewLink" href="">
+                        <div id="brewery0" class="bg-none p-10 rounded-2xl shadow-lg w-full md:w-1/2">
+                            <p id="name0"></p>
+                            <p id="type0"></p>
+                            <p id="address0"></p>
+                            <p id="phone0"></p>
+                            <p id="website0"></p>
+                        </div>
+                    </a>
+                    <a id="brewLink1" class="allBrewLink" href="">
+                        <div id="brewery1" class="bg-none p-10 rounded-2xl shadow-lg w-half md:w-1/2">
+                            <p id="name1"></p>
+                            <p id="type1"></p>
+                            <p id="address1"></p>
+                            <p id="phone1"></p>
+                            <p id="website1"></p>
+                        </div>
+                    </a>
+                    <a id="brewLink2" class="allBrewLink" href="">
+
+                        <div id="brewery2" class="bg-none p-10 rounded-2xl shadow-lg w-half md:w-1/2">
+                            <p id="name2"></p>
+                            <p id="type2"></p>
+                            <p id="address2"></p>
+                            <p id="phone2"></p>
+                            <p id="website2"></p>
+                        </div>
+                    </a>
+
+                    <a id="brewLink3" class="allBrewLink" href="">
+
+                        <div id="brewery3" class="bg-none p-10 rounded-2xl shadow-lg w-half md:w-1/2">
+                            <p id="name3"></p>
+                            <p id="type3"></p>
+                            <p id="address3"></p>
+                            <p id="phone3"></p>
+                            <p id="website3"></p>
+                        </div>
+                    </a>
+
+
+
+                    <div class="bg-img p-10 rounded-2xl shadow-lg w-half md:w-1/2">
+                        <a id="brewLink4" class="allBrewLink" href="">
+                            <div id="brewery4" >
+                                <p id="name4"></p>
+                                <p id="type4"></p>
+                                <p id="address4"></p>
+                                <p id="phone4"></p>
+                                <p id="website4"></p>
+
+                            </div>
+                        </a>
+                        <button type="button"
+                            class="inline-block rounded-full bg-info px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#54b4d3] transition duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:outline-none focus:ring-0 active:bg-info-700 active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(84,180,211,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)]">Review</button>
+
+
+                    </div>
+
+
+
+
+
+                </div>
+                <!-- when the customer's review button get clicked it displays all the comments about each breweries  -->
+                <!-- <button id="review-btn" class="hide-btn"></button> -->
+                <!--a div with a list of customer review of the breweries will be appended here.   -->
+
             </div>
-            <div id="brewery1" class="border-2 border-slate-950/50">
-                <p id="name1"></p>
-                <p id="type1"></p>
-                <p id="address1"></p>
-                <p id="phone1"></p>
-                <p id="website1"></p>
-            </div>
-            <div id="brewery2" class="border-2 border-slate-950/50">
-                <p id="name2"></p>
-                <p id="type2"></p>
-                <p id="address2"></p>
-                <p id="phone2"></p>
-                <p id="website2"></p>
-            </div>
-            <div id="brewery3" class="border-2 border-slate-950/50">
-                <p id="name3"></p>
-                <p id="type3"></p>
-                <p id="address3"></p>
-                <p id="phone3"></p>
-                <p id="website3"></p>
-            </div>
-            <div id="brewery4" class="border-2 border-slate-950/50">
-                <p id="name4"></p>
-                <p id="type4"></p>
-                <p id="address4"></p>
-                <p id="phone4"></p>
-                <p id="website4"></p>
-            </div>
-        </div>
-            <!-- when the customer's review button get clicked it displays all the comments about each breweries  -->
-            <!-- <button id="review-btn" class="hide-btn"></button> -->
-            <!--a div with a list of customer review of the breweries will be appended here.   -->
-            
-        </div>
-        </div>
-        <div id="map-container"></div>
-        
+            <!-- </div> -->
+            <!-- <div id="map-container"></div>
+
         <div class="cutomer-review"></div>
-        <div id="listOfThings-todo">
+        <div id="listOfThings-todo"> -->
             <!-- when the things to do button get clicked it displays all the information/activities in the chosen city -->
-            <button id="things-todo-btn" class="hide-btn"></button>
+            <!-- <button id="things-todo-btn" class="hide-btn"></button> -->
             <!--div with a list of events will be appended here  -->
+            <!-- </div> -->
         </div>
-
     </main>
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="./assets/script.js"></script>
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlat17P_RNHtWDKcyqXPwNrq5p78AUymk&libraries=places"></script> -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlat17P_RNHtWDKcyqXPwNrq5p78AUymk&libraries=places&callback=initMap"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlat17P_RNHtWDKcyqXPwNrq5p78AUymk&libraries=places&callback=initMap"></script> -->
 
 
 
