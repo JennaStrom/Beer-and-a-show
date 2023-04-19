@@ -105,6 +105,7 @@ function displayBrewery() {
                 $("#address"+i).html(address + ' ')
                 $("#phone"+i).html(phone + ' ')
                 $("#website"+i).html(website + ' ')
+                $("#brewery"+i).attr("class", "border-2 border-slate-950/50")
                 //breweriesContainer.append(eachBreweryDiv, reviewButton)
                 
                
@@ -147,9 +148,11 @@ function displayEvents() {
 
                 $("#event-name"+i).html(eventName + '')
                 $("#event-image"+i).html(" " +"<img src="+eventImage+">")
+                $("#event-image"+i).attr("class","w-32 h-32")
                 $("#event-venue"+i).html(eventVenue + '')
                 $("#event-date"+i).html(eventDate + '')
-                $("#event-url"+i).html("<a href="+eventUrl+">"+eventUrl+"</a>")
+                $("#event-url"+i).html("<a href="+eventUrl+">"+"Click Here To Visit TicketMaster For This Event"+"</a>")
+                $("#event"+i).attr("class", "border-2 border-slate-950/50")
             }
         })
 }
