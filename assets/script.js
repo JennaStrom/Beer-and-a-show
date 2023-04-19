@@ -2,18 +2,12 @@
 
 var apiKey = "MBTqnGkdcHr9yyjvkUMAekQ48KJAGxYA";
 
-
-// // check in with openbrewery api
-// var breweryApi_url = "https://api.openbrewerydb.org/v1/breweries?by_city=new york&per_page=6" //added the city search at the end and set it to show 6/search once we get the input info all set up "https://api.openbrewerydb.org/v1/breweries?by_city=" + cityName + "&per_page=6"
-// fetch(breweryApi_url)
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-
 var city;
 var userSelection = document.getElementById('my-selection');
 var userCitySearch = document.getElementById('city-search');
 var searchButton = document.querySelector('#search-button')
 var breweriesContainer = document.getElementById('brewery-container')
+var eventsContainer = document.getElementById('event-container')
 
 
 // function initMap() {
@@ -39,7 +33,6 @@ $("#search-button").on("click", displayBrewery)
 searchButton.addEventListener('click', function (event) {
     event.preventDefault()
 
-
     userTargetService = userSelection.value.trim()
     // breweriesContainer.innerHTML = ''
     // eventsContainer.innerHTML = ''  // merged later
@@ -52,10 +45,33 @@ searchButton.addEventListener('click', function (event) {
     // }else {
     //     bothTargets()
     // }
-    displayBrewery()
-    // displayThingsToDo()
+    //displayBrewery()
+    displayEvents()
 
+    // displayThingsToDo()
 })
+
+// $("#search-button").on("click", displayEvents)
+// searchButton.addEventListener('click', function (event) {
+//     event.preventDefault()
+
+
+//     userTargetService = userSelection.value.trim()
+//     // breweriesContainer.innerHTML = ''
+//     // eventsContainer.innerHTML = ''  // merged later
+//     // if logic to display result based on the user selection
+
+//     // if (userTargetService === 'breweries') {
+//     //     displayBrewery()
+//     // }else if (userTargetService === 'events') {
+//     //     displayEvent()
+//     // }else {
+//     //     bothTargets()
+//     // }
+//     //displayEvents()
+   
+//     // displayThingsToDo()
+// })
 
 city = userCitySearch.value.trim()
 console.log(userCitySearch.value)
@@ -105,27 +121,42 @@ function displayBrewery() {
                 //     //fetch review of brewe
                 // })
 
-              
-                
-
-
-
             }
-
-
-
-
-
-
-
-
-
-
 
         })
 }
 
+function displayEvents() {
+    city = userCitySearch.value.trim()
+    fetch("https://app.ticketmaster.com/discovery/v2/events.json?&city=" + city + "&size=5&apikey=" + apiKey)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
 
+            for (var i = 0; i < data._embedded.events.length; i++) {
+               
+                var eventName = ''
+               // var eventImage = ("img")
+                var eventVenue = ''
+                var eventDate = ''
+               // var eventUrl = ("href")
+
+                eventName = data._embedded.events[i].name
+                console.log("this")
+                console.log(eventName)
+               // eventImage.setAttribute('src', data._embedded.events[i].images[0].url)
+                eventVenue = "Venue: " + data._embedded.events[i]._embedded.venues[0].name
+                eventDate = "Date: " + data._embedded.events[i].dates.start.localDate
+               // eventUrl.setAttribute('href', data._embedded.events[i].url)
+
+                $("#event-name"+i).html(eventName + '')
+                //img
+                $("#event-venue"+i).html(eventVenue + '')
+                $("#event-date"+i).html(eventDate + '')
+                //url
+            }
+        })
+}
 function displayThingsToDo (){
 
     https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=restaurant&name=harbour&key=YOUR_API_KEY
