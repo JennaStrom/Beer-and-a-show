@@ -11,25 +11,29 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<body class="font-serif">
+
+<body class="font-serif  ">
     <header class="p-20 text-lg justify-center bg-gradient-to-r from-sky-950 to-sky-500 h14">
         <img src="" alt="">
         <h1>Beer and a Show</h1>
     </header>
     <div id="quote" class="p-10 underline underline-offset-8">....motto....</div>
     <main>
-        <div class="flex justify-center ">
-        <div id="search-div" class="main-form flex items-center bg-gray-100 justify-center w-3/4 shadow-xl" >
-            <form class="p-3">
-                <select name="list-type" id="my-selection" class="my-4 w-full shadow-md">
-                    <option value="">Choose your search target:</option>
-                    <option value="events">only events</option>
-                    <option value="breweries">only breweries</option>
-                    <option value="both">both events and breweries</option>
-                </select>
-                <input type="text" id="city-search" placeholder="Search by city" class="my-4 w-full shadow-md">
-                <button id="search-button" type="submit" class=" my-4 w-full hover:border-black shadow-md ">Search</button>
-            </form>
+        <!-- to scroll in all direction if needed -->
+        <div class="main-container overflow-scroll ... overflow-auto md:overflow-scroll">
+            <div class="flex justify-center ">
+                <div id="search-div" class="main-form flex items-center bg-gray-100 justify-center w-3/4 shadow-xl">
+                    <form class="p-3">
+                        <select name="list-type" id="my-selection" class="my-4 w-full shadow-md">
+                            <option value="">Choose your search target:</option>
+                            <option value="events">only events</option>
+                            <option value="breweries">only breweries</option>
+                            <option value="both">both events and breweries</option>
+                        </select>
+                        <input type="text" id="city-search" placeholder="Search by city" class="my-4 w-full shadow-md">
+                        <button id="search-button" type="submit"
+                            class=" my-4 w-full hover:border-black shadow-md ">Search</button>
+                    </form>
 
         </div>
         </div>
@@ -124,8 +128,9 @@
         <!-- <div id="map-container"></div>
         
         <div class="cutomer-review"></div>
-        <div id="listOfThings-todo">
+        <div id="listOfThings-todo"> -->
             <!-- when the things to do button get clicked it displays all the information/activities in the chosen city -->
+            <!-- <button id="things-todo-btn" class="hide-btn"></button> -->
             <!-- <button id="things-todo-btn" class="hide-btn"></button> -->
             <!--div with a list of events will be appended here  -->
         <!-- </div>  --> 
@@ -135,7 +140,7 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="./assets/script.js"></script>
     <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlat17P_RNHtWDKcyqXPwNrq5p78AUymk&libraries=places"></script> -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlat17P_RNHtWDKcyqXPwNrq5p78AUymk&libraries=places&callback=initMap"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlat17P_RNHtWDKcyqXPwNrq5p78AUymk&libraries=places&callback=initMap"></script> -->
 
 
 
