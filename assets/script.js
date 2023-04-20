@@ -151,7 +151,7 @@ function displayEvents() {
                 // $("#event-image"+i).attr("class","w-32 h-32")
                 $("#event-venue"+i).html(eventVenue + '')
                 $("#event-date"+i).html(eventDate + '')
-                $("#event-url"+i).html("<a href="+eventUrl+">"+"Click Here To Visit TicketMaster For This Event"+"</a>")
+                $("#event-url"+i).html("<a href="+eventUrl+">"+"Click To Visit TicketMaster For This Event"+"</a>")
                 $("#event"+i).css("background-image", "url("+eventImage+")")
                 $("#event"+i).css("background-repeat", "no-repeat")
                 $("#event"+i).css("background-color", "rgba(255, 255, 255, 0")
@@ -187,7 +187,7 @@ function displayBreweries() {
                 var type = 'Type: ' + data[i].brewery_type
                 var address = 'Address: ' + data[i].address_1
                 var phone = 'Phone: ' + data[i].phone
-                var website = 'Website: ' + data[i].website_url
+                var website = data[i].website_url
 
                
 
@@ -198,7 +198,7 @@ function displayBreweries() {
                 $("#type" + i).html(type + ' ')
                 $("#address" + i).html(address + ' ')
                 $("#phone" + i).html(phone + ' ')
-                $("#website" + i).html(website + ' ')
+                $("#website" + i).html('Click to visit Brewery Website')
 
                 $(allLinkWrapper[i]).attr('href', data[i].website_url)
 
