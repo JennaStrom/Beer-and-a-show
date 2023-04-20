@@ -152,7 +152,9 @@ function displayEvents() {
                 $("#event-venue"+i).html(eventVenue + '')
                 $("#event-date"+i).html(eventDate + '')
                 $("#event-url"+i).html("<a href="+eventUrl+">"+"Click Here To Visit TicketMaster For This Event"+"</a>")
-                $("#event"+i).attr("class", "border-2 border-slate-950/50")
+                
+
+                
             }
         })
 }
@@ -191,50 +193,18 @@ function displayBreweries() {
                 $("#phone" + i).html(phone + ' ')
                 $("#website" + i).html(website + ' ')
 
+                $(allLinkWrapper[i]).attr('href', data[i].website_url)
 
+                allLinkWrapper.show()
  
 //  var myCard = $('.bg-none')
 
 // myCard.css('background-size', 'cover')
 
         }
+})
 }
 
-function displayEvents() {
-    city = userCitySearch.value.trim()
-    fetch("https://app.ticketmaster.com/discovery/v2/events.json?&city=" + city + "&size=5&apikey=" + apiKey)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-
-            for (var i = 0; i < data._embedded.events.length; i++) {
-               
-                var eventName = ''
-                var eventImage = data._embedded.events[i].images[0].url
-                var eventVenue = ''
-                var eventDate = ''
-                var eventUrl = data._embedded.events[i].url
-
-        
-
-
-                $(allLinkWrapper[i]).attr('href', data[i].website_url)
-
-                allLinkWrapper.show()
-
-                // 
-                //breweriesContainer.append(eachBreweryDiv, reviewButton)
-            }
-            })
-
-
-        })
-        .catch(error => {
-            console.error(error)
-            //module here to display the error on the page for the user
-        })
-
-}
 
 
 
