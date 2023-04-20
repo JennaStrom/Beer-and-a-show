@@ -77,6 +77,50 @@ document.addEventListener('keydown', function(event){
    mainContentContainer.show()
 })
 
+// $("#search-button").on("click", displayEvents)
+// searchButton.addEventListener('click', function (event) {
+//     event.preventDefault()
+
+
+//     userTargetService = userSelection.value.trim()
+//     // breweriesContainer.innerHTML = ''
+//     // eventsContainer.innerHTML = ''  // merged later
+//     // if logic to display result based on the user selection
+
+//     // if (userTargetService === 'breweries') {
+//     //     displayBrewery()
+//     // }else if (userTargetService === 'events') {
+//     //     displayEvent()
+//     // }else {
+//     //     bothTargets()
+//     // }
+//     //displayEvents()
+   
+//     // displayThingsToDo()
+// })
+
+// $("#search-button").on("click", displayEvents)
+// searchButton.addEventListener('click', function (event) {
+//     event.preventDefault()
+
+
+//     userTargetService = userSelection.value.trim()
+//     // breweriesContainer.innerHTML = ''
+//     // eventsContainer.innerHTML = ''  // merged later
+//     // if logic to display result based on the user selection
+
+//     // if (userTargetService === 'breweries') {
+//     //     displayBrewery()
+//     // }else if (userTargetService === 'events') {
+//     //     displayEvent()
+//     // }else {
+//     //     bothTargets()
+//     // }
+//     //displayEvents()
+   
+//     // displayThingsToDo()
+// })
+
 
 
 function displayEvents() {
@@ -153,9 +197,23 @@ function displayBreweries() {
 
 // myCard.css('background-size', 'cover')
 
+        }
+}
 
+function displayEvents() {
+    city = userCitySearch.value.trim()
+    fetch("https://app.ticketmaster.com/discovery/v2/events.json?&city=" + city + "&size=5&apikey=" + apiKey)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
 
-
+            for (var i = 0; i < data._embedded.events.length; i++) {
+               
+                var eventName = ''
+                var eventImage = data._embedded.events[i].images[0].url
+                var eventVenue = ''
+                var eventDate = ''
+                var eventUrl = data._embedded.events[i].url
 
         
 
@@ -166,8 +224,8 @@ function displayBreweries() {
 
                 // 
                 //breweriesContainer.append(eachBreweryDiv, reviewButton)
-
             }
+            })
 
 
         })
