@@ -147,13 +147,18 @@ function displayEvents() {
             
 
                 $("#event-name"+i).html(eventName + '')
-                $("#event-image"+i).html(" " +"<img src="+eventImage+">")
-                $("#event-image"+i).attr("class","w-32 h-32")
+                // $("#event-image"+i).html(" " +"<img src="+eventImage+">")
+                // $("#event-image"+i).attr("class","w-32 h-32")
                 $("#event-venue"+i).html(eventVenue + '')
                 $("#event-date"+i).html(eventDate + '')
                 $("#event-url"+i).html("<a href="+eventUrl+">"+"Click Here To Visit TicketMaster For This Event"+"</a>")
-                
-
+                $("#event"+i).css("background-image", "url("+eventImage+")")
+                $("#event"+i).css("background-repeat", "no-repeat")
+                $("#event"+i).css("background-color", "rgba(255, 255, 255, 0")
+                $("#event"+i).css("background-size", "cover")
+                $("#event"+i).css("font-weight", "bold")
+                $("#event"+i).attr("class", "bg-none p-10 rounded-2xl shadow-lg w-full md:w-1/2")
+                $("#event-link"+i).attr("href", data._embedded.events[i].url)
                 
             }
         })
