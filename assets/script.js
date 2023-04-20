@@ -157,6 +157,8 @@ function displayEvents() {
                 $("#event"+i).css("background-color", "rgba(255, 255, 255, 0")
                 $("#event"+i).css("background-size", "cover")
                 $("#event"+i).css("font-weight", "bold")
+                $("#event"+i).css("color", "white")
+                $("#event"+i).css("textShadow", "black 4px 4px 4px")
                 $("#event"+i).attr("class", "bg-none p-10 rounded-2xl shadow-lg w-full md:w-1/2")
                 $("#event-link"+i).attr("href", data._embedded.events[i].url)
                 
