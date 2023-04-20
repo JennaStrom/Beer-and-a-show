@@ -4,6 +4,10 @@ header {
     background-color: aquamarine;
     text-align: center;
 }
+.event-font {
+    color: white;
+    text-shadow: 4px 4px 4px white;
+}
 
 #quote {
     margin-left: 45%;
@@ -43,6 +47,7 @@ header {
     background-color: rgba(0, 0, 0, 0);
     background-size: cover;
     color: black;
+    text-shadow: 4px 4px 4px white;
 
 
 }
@@ -63,6 +68,7 @@ header {
 .allBrewLink {
     color: rgb(245, 250, 243);
     font-weight: bold;
+    text-shadow: 4px 4px 4px black;
     z-index: 1;
     display: none;
 }
