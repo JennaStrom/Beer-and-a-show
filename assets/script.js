@@ -10,6 +10,7 @@ var breweriesContainer = document.getElementById('brewery-container')
 var eventsContainer = $('event-xontaine')
 var allLinkWrapper = $('.allBrewLink')
 var mainContentContainer = $('.mainContent-container ')
+var allEvents = $('.allEvent')
 
 var userTargetService;
 var city;
@@ -134,6 +135,7 @@ function displayEvents() {
                 $("#event"+i).css("textShadow", "black 4px 4px 4px")
                 // $("#event"+i).attr("class", "bg-none p-10 rounded-2xl shadow-lg w-full md:w-1/2")
                 $("#event-link"+i).attr("href", data._embedded.events[i].url)
+                allEvents.show()
                 
             }
         })
