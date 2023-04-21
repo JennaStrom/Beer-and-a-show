@@ -61,9 +61,9 @@ header {
 
 }
 /* NOT AFFECTING */
-.mainContent-container{
+/* .mainContent-container{
     display: none;
-}
+} */
 
 .allBrewLink {
     color: rgb(245, 250, 243);
@@ -72,6 +72,18 @@ header {
     z-index: 1;
     display: none;
 }
+
+.allEvent {
+    color: rgb(245, 250, 243);
+    font-weight: bold;
+    text-shadow: 4px 4px 4px black;
+    z-index: 1;
+    display: none;
+}
+/* #event-container, #brewery-container {
+    display: none;
+} */
+
 /* button {
     z-index: 1;
 } */
