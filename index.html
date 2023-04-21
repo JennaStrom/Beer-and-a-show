@@ -15,9 +15,9 @@
 <body class="font-serif  ">
     <header class="p-20 text-lg justify-center bg-gradient-to-r from-sky-950 to-sky-500 h14">
         <img src="" alt="">
-        <h1>Beer and a Show</h1>
+        <h1 class="title text-5xl font-bold">Beer and a Show</h1>
     </header>
-    <div id="quote" class="p-10 underline underline-offset-8">....motto....</div>
+    <div id="quote" class="p-10 underline underline-offset-8 text-2xl font-bold">Heading on a trip? Enter the city you are travelling to for a list of local breweries and events coming up! Use the drop down to filter for just Events or Breweries.</div>
     <main>
         <!-- to scroll in all direction if needed -->
         <div class="main-container overflow-scroll ... overflow-auto md:overflow-scroll">
@@ -37,18 +37,20 @@
 
                 </div>
             </div>
-
-
+            <div class="flex justify-around mt-10">
+            <h2 id="eventList-heading" class="flex justify-center">Events Near Your Destination:</h2>
+                <h2 id="eventList-heading" class="flex justify-center">Breweries Near Your Destination:</h2>
+            </div>
             <div
-                class=" flex flex-fol gap-10 mx-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-100 brightness-100 lg:grid lg:grid-cols-2">
+                class=" flex flex-fol gap-10 mt-10 mx-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-100 brightness-100 lg:grid lg:grid-cols-2">
                 
                 <div id="event-container "
                     class="flex flex-col flex-wrap gap-2 mx-2 place-content-evenly border-double border-4 border-sky-500 lg:grid lg:grid-cols-2">
-                    <h2 id="eventList-heading" class="flex justify-center">Events Near Your Destination:</h2>
+                    
 
                     <!--div boxes for a list of events will be created and appended here  -->
                     <a href="" id="event-link0" target="_blank">
-                        <div id="event0" class="allEvent bg-none p-4 rounded-2xl h-64 w-full brightness-100 text-end ">
+                        <div id="event0" class="allEvent bg-none p-4 rounded-2xl h-64 w-full brightness-100 text-bottom ">
                             <p id="event-name0"></p>
                             <p id="event-image0"></p>
                             <p id="event-venue0"></p>
@@ -92,13 +94,22 @@
                             <p id="event-url4"></p>
                         </div>
                     </a>
+                    <a href="" id="event-link5" target="_blank">
+                        <div id="event5" class="allEvent bg-none p-4 h-64 rounded-2xl w-full">
+                            <p id="event-name5"></p>
+                            <p id="event-image5"></p>
+                            <p id="event-venue5"></p>
+                            <p id="event-date5"></p>
+                            <p id="event-url5"></p>
+                        </div>
+                    </a>
 
                 </div>
 
                 <div id="brewery-container flex flex-wrap"
                     class="flex flex-col lg:grid lg:grid-cols-2 gap-2 mx-2 place-content-evenly border-double border-4 border-sky-500 ">
 
-                    <h2 id="eventList-heading" class="flex justify-center">Breweries Near Your Destination:</h2>
+                    
 
                     <div class="eachDivWrapper">
                         <a href="" class="allBrewLink" target="_blank">
@@ -111,9 +122,9 @@
                             </div>
 
                         </a>
-                        <button
+                        <!--<button
                             class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
-                            here to view customer review</button>
+                            here to view customer review</button> -->
                     </div>
                     <div class="eachDivWrapper">
                         <a href="" class="allBrewLink" target="_blank">
@@ -126,9 +137,9 @@
                             </div>
 
                         </a>
-                        <button
+                        <!--<button
                             class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
-                            here to view customer review</button>
+                            here to view customer review</button> -->
                     </div>
 
                     <div class="eachDivWrapper">
@@ -142,9 +153,9 @@
                             </div>
 
                         </a>
-                        <button
+                        <!--<button
                             class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
-                            here to view customer review</button>
+                            here to view customer review</button> -->
                     </div>
 
                     <div class="eachDivWrapper">
@@ -159,9 +170,9 @@
 
                         </a>
 
-                        <button
+                        <!--<button
                             class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
-                            here to view customer review</button>
+                            here to view customer review</button>-->
                     </div>
 
                     <div class="eachDivWrapper">
@@ -177,10 +188,28 @@
                             </div>
 
                         </a>
-                        <button
+                        <!--<button
                             class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75 focus-visible:ring">Click
-                            here to view customer review</button>
+                            here to view customer review</button>-->
                     </div>
+                    <div class="eachDivWrapper">
+
+                        <a href="" class="allBrewLink" target="_blank">
+
+                            <div id="brewery5" class="bg-none p-4 h-64 rounded-2xl  w-full ">
+                                <p id="name5"></p>
+                                <p id="type5"></p>
+                                <p id="address5"></p>
+                                <p id="phone5"></p>
+                                <p id="website5"></p>
+                            </div>
+
+                        </a>
+                        <!--<button
+                            class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75 focus-visible:ring">Click
+                            here to view customer review</button>-->
+                    </div>
+
 
 
                     <!-- when the customer's review button get clicked it displays all the comments about each breweries  -->
