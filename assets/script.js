@@ -7,6 +7,7 @@ var userSelection = document.getElementById('my-selection');
 var userCitySearch = document.getElementById('city-search');
 var searchButton = document.querySelector('#search-button')
 var breweriesContainer = document.getElementById('brewery-container')
+var eventsContainer = $('event-xontaine')
 var allLinkWrapper = $('.allBrewLink')
 var mainContentContainer = $('.mainContent-container ')
 
@@ -33,15 +34,16 @@ searchButton.addEventListener('click', function (event) {
     event.preventDefault()
     // city = userCitySearch.value.trim()
     var userTargetService = userSelection.value.trim()
-
+    console.log('inside click')
+console.log(userTargetService)
     // breweriesContainer.innerHTML = ''
 
     // if logic to display result based on the user selection
 
 
-    if (userTargetService === 'only breweries' || userTargetService === 'both events and breweries') {
+    if (userTargetService === 'breweries' || userTargetService === 'both') {
         displayBreweries()
-    } else if (userTargetService === 'only events' || userTargetService === 'both events and breweries') {
+    } else if (userTargetService === 'events' || userTargetService === 'both') {
         displayEvents()
         console.log()
     } else {
@@ -58,6 +60,7 @@ document.addEventListener('keydown', function(event){
         event.preventDefault()
         var userTargetService = userSelection.value.trim()
 
+        console.log(userTargetService)
     // breweriesContainer.innerHTML = ''
 
     // if logic to display result based on the user selection
@@ -74,30 +77,9 @@ document.addEventListener('keydown', function(event){
 
     }
     }
-   mainContentContainer.show()
+//    mainContentContainer.show()
 })
 
-// $("#search-button").on("click", displayEvents)
-// searchButton.addEventListener('click', function (event) {
-//     event.preventDefault()
-
-
-//     userTargetService = userSelection.value.trim()
-//     // breweriesContainer.innerHTML = ''
-//     // eventsContainer.innerHTML = ''  // merged later
-//     // if logic to display result based on the user selection
-
-//     // if (userTargetService === 'breweries') {
-//     //     displayBrewery()
-//     // }else if (userTargetService === 'events') {
-//     //     displayEvent()
-//     // }else {
-//     //     bothTargets()
-//     // }
-//     //displayEvents()
-   
-//     // displayThingsToDo()
-// })
 
 // $("#search-button").on("click", displayEvents)
 // searchButton.addEventListener('click', function (event) {
@@ -107,19 +89,10 @@ document.addEventListener('keydown', function(event){
 //     userTargetService = userSelection.value.trim()
 //     // breweriesContainer.innerHTML = ''
 //     // eventsContainer.innerHTML = ''  // merged later
-//     // if logic to display result based on the user selection
 
-//     // if (userTargetService === 'breweries') {
-//     //     displayBrewery()
-//     // }else if (userTargetService === 'events') {
-//     //     displayEvent()
-//     // }else {
-//     //     bothTargets()
-//     // }
-//     //displayEvents()
-   
-//     // displayThingsToDo()
 // })
+
+// #event-container, #brewery-container
 
 
 
@@ -159,7 +132,7 @@ function displayEvents() {
                 $("#event"+i).css("font-weight", "bold")
                 $("#event"+i).css("color", "white")
                 $("#event"+i).css("textShadow", "black 4px 4px 4px")
-                $("#event"+i).attr("class", "bg-none p-10 rounded-2xl shadow-lg w-full md:w-1/2")
+                // $("#event"+i).attr("class", "bg-none p-10 rounded-2xl shadow-lg w-full md:w-1/2")
                 $("#event-link"+i).attr("href", data._embedded.events[i].url)
                 
             }
@@ -203,7 +176,12 @@ function displayBreweries() {
                 $(allLinkWrapper[i]).attr('href', data[i].website_url)
 
                 allLinkWrapper.show()
- 
+
+
+            
+
+              
+
 //  var myCard = $('.bg-none')
 
 // myCard.css('background-size', 'cover')
