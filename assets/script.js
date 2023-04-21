@@ -67,9 +67,9 @@ document.addEventListener('keydown', function(event){
     // if logic to display result based on the user selection
 
 
-    if (userTargetService === 'only breweries' || userTargetService === 'both events and breweries') {
+    if (userTargetService === 'breweries' || userTargetService === 'both') {
         displayBreweries()
-    } else if (userTargetService === 'only events' || userTargetService === 'both events and breweries') {
+    } else if (userTargetService === 'events' || userTargetService === 'both') {
         displayEvents()
         console.log()
     } else {
@@ -77,7 +77,7 @@ document.addEventListener('keydown', function(event){
         displayEvents()
 
     }
-    }
+}
 //    mainContentContainer.show()
 })
 
@@ -136,6 +136,7 @@ function displayEvents() {
                 // $("#event"+i).attr("class", "bg-none p-10 rounded-2xl shadow-lg w-full md:w-1/2")
                 $("#event-link"+i).attr("href", data._embedded.events[i].url)
                 allEvents.show()
+                
                 
             }
         })
