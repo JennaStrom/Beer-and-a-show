@@ -99,7 +99,7 @@ document.addEventListener('keydown', function(event){
 
 function displayEvents() {
     city = userCitySearch.value.trim()
-    fetch("https://app.ticketmaster.com/discovery/v2/events.json?&city=" + city + "&size=5&apikey=" + apiKey)
+    fetch("https://app.ticketmaster.com/discovery/v2/events.json?&city=" + city + "&size=6&apikey=" + apiKey)
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -148,7 +148,7 @@ function displayBreweries() {
     console.log(city)
 
 
-    fetch('https://api.openbrewerydb.org/v1/breweries?by_city=' + city + '&per_page=5')
+    fetch('https://api.openbrewerydb.org/v1/breweries?by_city=' + city + '&per_page=6')
         .then(res => res.json())
         .then(data => {
             console.log(data)
@@ -164,7 +164,11 @@ function displayBreweries() {
                 var phone = 'Phone: ' + data[i].phone
                 var website = data[i].website_url
 
-               
+               if (data[i].address_1 === null) {
+                address = "Adress: No Address Found"
+               } else {
+                var address = 'Address: ' + data[i].address_1
+               }
 
 
 
