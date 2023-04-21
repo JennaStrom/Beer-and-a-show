@@ -1,3 +1,6 @@
+body {
+    background-color: rgb(130, 172, 191);
+}
 
 /* temporarily */
 header {
@@ -6,16 +9,50 @@ header {
 }
 
 .title {
-    text-shadow: white 4px 4px 4px;
+    text-shadow: black 4px 4px 4px;
+    color: rgba(255, 255, 255, 0.835);
 }
+
 .event-font {
     color: white;
     text-shadow: 4px 4px 4px white;
 }
 
+#search-div {
+    border-radius: 10px;
+    padding: 1%;
+}
+
+#my-selection {
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#city-search {
+    border-radius: 5px;
+    padding: 1%;
+}
+
+#search-button {
+    background-color: rgba(255, 255, 255, 0.705);
+    border-radius: 5px;
+    padding: 1%;
+}
+
 #quote {
     text-align: center;
-    }
+    color: rgba(255, 255, 255, 0.705);
+}
+
+#eventList-heading {
+    color: rgba(255, 255, 255, 0.705);
+}
+
+#containers {
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
 #brewery0 {
     background-image: url('https://images.unsplash.com/photo-1555658636-6e4a36218be7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
@@ -64,6 +101,7 @@ header {
 
 
 }
+
 #brewery5 {
     background-image: url('https://images.unsplash.com/photo-1575055328016-d94e5d9e3461?ixlib=rb-4.0.3&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80');
     background-repeat: no-repeat;
@@ -72,6 +110,7 @@ header {
 
 
 }
+
 /* NOT AFFECTING */
 /* .mainContent-container{
     display: none;
@@ -92,6 +131,7 @@ header {
     z-index: 1;
     display: none;
 }
+
 /* #event-container, #brewery-container {
     display: none;
 } */
@@ -99,8 +139,3 @@ header {
 /* button {
     z-index: 1;
 } */
-
-
-
-
-
