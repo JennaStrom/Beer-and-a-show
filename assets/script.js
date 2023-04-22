@@ -32,20 +32,19 @@ function displayAllResults() {
 
         breweriesContainer.innerHTML = ''
 
-        displayEvents()
-
-        ContentContainer.attr('class', 'flex flex-col my-10 mx-2 bg-gradient-to-r from-cyan-900 via-cyan-700 to-sky-900 opacity-100 brightness-100 lg:grid lg:grid-cols-1 w-1/2 place-self-center')
-
+        displayEvents() 
+        $('#content-containers').removeClass("lg:grid lg:grid-cols-2")
+        $('#event-container').addClass("w-1/2")
+       
 
     } else if (userTargetService === 'breweries') {
 
 
 
         displayBreweries()
-
-        $('#brewery-container').attr('class', 'flex flex-col lg:grid lg:grid-cols-2 gap-2 mx-2 place-content-evenly border-r-4 border-l-0 border-white pr-4 pl-0')
-
-        ContentContainer.attr('class', 'flex flex-col  my-10 mx-2 bg-gradient-to-r from-cyan-900 via-cyan-700 to-sky-900 opacity-100 brightness-100 lg:grid lg:grid-cols-1 w-1/2 place-self-center')
+        $('#content-containers').removeClass("lg:grid lg:grid-cols-2")
+        $('#brewery-container').addClass("w-1/2")
+       
 
         eventsContainer.innerHTML = ''
         // $('#event-container').attr('class', 'border-none')
@@ -89,9 +88,9 @@ function displayEvents() {
     var eventHeading = $('<h2/>')
     eventHeading.text('Events Near Your Destination:')
     $('#event-h2-div').empty()
-
+    $("#event-grid").addClass("border-x-4 px-4 border-white")
     $('#event-h2-div').append(eventHeading)
-    $('#event-h2-div').attr("class", "w-full text-center underline-offset-8 text-2xl font-bold")
+    $('#event-h2-div').attr("class", "my-4 w-full text-center underline-offset-8 text-2xl font-bold")
 
     fetch("https://app.ticketmaster.com/discovery/v2/events.json?&city=" + city + "&size=6&apikey=" + apiKey)
         .then(res => res.json())
@@ -140,7 +139,8 @@ function displayBreweries() {
     var breweryHeading = $('<h2/>')
     $('#brewery-h2-div').empty()
     $('#brewery-h2-div').append(breweryHeading.text('Breweries Near Your Destination:'))
-    $('#brewery-h2-div').attr("class", "w-full text-center underline-offset-8 text-2xl font-bold")
+    $('#brewery-h2-div').attr("class", "my-4 w-full text-center underline-offset-8 text-2xl font-bold")
+    $('#brewery-grid').addClass("border-x-4 border-white px-4")
 
     fetch('https://api.openbrewerydb.org/v1/breweries?by_city=' + city + '&per_page=6')
         .then(res => {
