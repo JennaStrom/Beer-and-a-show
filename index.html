@@ -47,10 +47,10 @@
 
 
             <div id="content-containers"
-                class=" flex flex-col gap-10 my-10 mx-4 bg-gradient-to-r from-cyan-900 via-cyan-700 to-sky-900 lg:grid lg:grid-cols-2">
+                class="flex flex-col gap-6 my-10  bg-gradient-to-r from-cyan-900 via-cyan-700 to-sky-900 md:grid md:grid-cols-2">
 
                 <div id="event-container"
-                    class="flex flex-col flex-wrap gap-2 mx-2 place-content-evenly lg:grid lg:grid-cols-2 border-r-4 border-white pr-4">
+                    class="">
 
                     <div id="event-h2-div" class=" text-center w-full col-span-2">
                         <!-- <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Events Near
@@ -58,7 +58,7 @@
                 <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Breweries
                     Near Your Destination:</h2> -->
                     </div>
-
+                    <div id="event-grid" class="flex flex-col flex-wrap gap-2 mx-2 place-content-evenly lg:grid lg:grid-cols-2 border-r-4 border-white pr-4 ">
                     <!--div boxes for a list of events will be created and appended here  -->
                     <a href="" id="event-link0" target="_blank">
                         <div id="event0"
@@ -120,21 +120,23 @@
                             <p id="event-url5"></p>
                         </div>
                     </a>
-
+                
                 </div>
+            </div>
 
 
                 <div id="brewery-container"
-                    class="flex flex-col lg:grid lg:grid-cols-2 gap-2 mx-2 place-content-evenly border-l-4 border-white pl-4">
+                    class="">
 
-
+                
                     <div id="brewery-h2-div" class="text-center  w-full col-span-2">
                         <!-- <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Events Near
                         Your Destination:</h2>
                     <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Breweries
                         Near Your Destination:</h2> -->
                     </div>
-
+                                                  
+                    <div id="brewery-grid" class="flex flex-col flex-wrap lg:grid lg:grid-cols-2 gap-2 mx-2 place-content-evenly border-l-4 border-white pl-4">
                     <div class="eachDivWrapper">
                         <a href="" class="allBrewLink" target="_blank">
                             <div id="brewery0"
@@ -239,9 +241,9 @@
                             class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75 focus-visible:ring">Click
                             here to view customer review</button>-->
                     </div>
+                </div>
 
-
-
+                </div>
                     <!-- when the customer's review button get clicked it displays all the comments about each breweries  -->
                     <!-- <button id="review-btn" class="hide-btn"></button> -->
                     <!--a div with a list of customer review of the breweries will be appended here.   -->

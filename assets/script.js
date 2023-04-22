@@ -91,6 +91,7 @@ function displayEvents() {
     $('#event-h2-div').empty()
 
     $('#event-h2-div').append(eventHeading)
+    $('#event-h2-div').attr("class", "w-full text-center underline-offset-8 text-2xl font-bold")
 
     fetch("https://app.ticketmaster.com/discovery/v2/events.json?&city=" + city + "&size=6&apikey=" + apiKey)
         .then(res => res.json())
@@ -99,18 +100,11 @@ function displayEvents() {
 
             for (var i = 0; i < data._embedded.events.length; i++) {
 
-                var eventName = ''
+                var eventName = data._embedded.events[i].name
                 var eventImage = data._embedded.events[i].images[0].url
-                var eventVenue = ''
-                var eventDate = ''
+                var eventVenue = "Venue: " + data._embedded.events[i]._embedded.venues[0].name
+                var eventDate = "Date: " + data._embedded.events[i].dates.start.localDate
                 var eventUrl = data._embedded.events[i].url
-
-                eventName = data._embedded.events[i].name
-                // console.log("this")
-                // console.log(eventName)
-
-                eventVenue = "Venue: " + data._embedded.events[i]._embedded.venues[0].name
-                eventDate = "Date: " + data._embedded.events[i].dates.start.localDate
 
 
                 $("#event-name" + i).html(eventName + '')
@@ -146,7 +140,7 @@ function displayBreweries() {
     var breweryHeading = $('<h2/>')
     $('#brewery-h2-div').empty()
     $('#brewery-h2-div').append(breweryHeading.text('Breweries Near Your Destination:'))
-
+    $('#brewery-h2-div').attr("class", "w-full text-center underline-offset-8 text-2xl font-bold")
 
     fetch('https://api.openbrewerydb.org/v1/breweries?by_city=' + city + '&per_page=6')
         .then(res => {
