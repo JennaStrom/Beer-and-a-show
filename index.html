@@ -17,12 +17,15 @@
         <img src="" alt="">
         <h1 class="title text-6xl font-bold">Beer and a Show</h1>
     </header>
-    <div id="quote" class="p-10 underline underline-offset-8 text-3xl font-bold">Heading on a trip? Enter the city you are travelling to for a list of local breweries and events coming up! Use the drop down to filter for just Events or Breweries.</div>
+    <div id="quote" class="p-10 underline underline-offset-8 text-3xl font-bold">Heading on a trip? Enter the city you
+        are travelling to for a list of local breweries and events coming up! Use the drop down to filter for just
+        Events or Breweries.</div>
     <main>
         <!-- to scroll in all direction if needed -->
         <div class="main-container">
             <div class="flex justify-center ">
-                <div id="search-div" class="main-form flex items-center bg-gradient-to-r from-cyan-900 via-cyan-700 to-sky-900 justify-center w-2/5 shadow-xl">
+                <div id="search-div"
+                    class="main-form flex items-center bg-gradient-to-r from-cyan-900 via-cyan-700 to-sky-900 justify-center w-2/5 shadow-xl">
                     <form class="p-3">
                         <select name="list-type" id="my-selection" class="my-4 w-full shadow-md">
                             <option value="">Choose your search target:</option>
@@ -37,20 +40,29 @@
 
                 </div>
             </div>
-            <div class="flex justify-around mt-10">
-            <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Events Near Your Destination:</h2>
-                <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Breweries Near Your Destination:</h2>
-            </div>
-            <div id="containers"
-                class=" flex flex-fol gap-10 my-10 mx-4 bg-gradient-to-r from-cyan-900 via-cyan-700 to-sky-900 lg:grid lg:grid-cols-2">
-                
-                <div id="event-container "
+
+            <div id="response-notification"></div>
+
+
+
+
+            <div id="content-containers"
+                class=" flex flex-col gap-10 my-10 mx-4 bg-gradient-to-r from-cyan-900 via-cyan-700 to-sky-900 lg:grid lg:grid-cols-2">
+
+                <div id="event-container"
                     class="flex flex-col flex-wrap gap-2 mx-2 place-content-evenly lg:grid lg:grid-cols-2 border-r-4 border-white pr-4">
-                    
+
+                    <div id="event-h2-div" class=" text-center w-full col-span-2">
+                        <!-- <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Events Near
+                    Your Destination:</h2>
+                <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Breweries
+                    Near Your Destination:</h2> -->
+                    </div>
 
                     <!--div boxes for a list of events will be created and appended here  -->
                     <a href="" id="event-link0" target="_blank">
-                        <div id="event0" class="allEvent bg-none p-4 rounded-2xl h-64 w-full brightness-100 hover:border-4 hover:border-sky-500">
+                        <div id="event0"
+                            class="allEvent bg-none p-4 rounded-2xl h-64 w-full brightness-100 hover:border-4 hover:border-sky-500">
                             <p id="event-name0"></p>
                             <p id="event-image0"></p>
                             <p id="event-venue0"></p>
@@ -59,7 +71,8 @@
                         </div>
                     </a>
                     <a href="" id="event-link1" target="_blank">
-                        <div id="event1" class="allEvent bg-none p-4 h-64 rounded-2xl  w-full  hover:border-4 hover:border-sky-500">
+                        <div id="event1"
+                            class="allEvent bg-none p-4 h-64 rounded-2xl  w-full  hover:border-4 hover:border-sky-500">
                             <p id="event-name1"></p>
                             <p id="event-image1"></p>
                             <p id="event-venue1"></p>
@@ -68,7 +81,8 @@
                         </div>
                     </a>
                     <a href="" id="event-link2" target="_blank">
-                        <div id="event2" class="allEvent bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                        <div id="event2"
+                            class="allEvent bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
                             <p id="event-name2"></p>
                             <p id="event-image2"></p>
                             <p id="event-venue2"></p>
@@ -77,7 +91,8 @@
                         </div>
                     </a>
                     <a href="" id="event-link3" target="_blank">
-                        <div id="event3" class="allEvent bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                        <div id="event3"
+                            class="allEvent bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
                             <p id="event-name3"></p>
                             <p id="event-image3"></p>
                             <p id="event-venue3"></p>
@@ -86,7 +101,8 @@
                         </div>
                     </a>
                     <a href="" id="event-link4" target="_blank">
-                        <div id="event4" class="allEvent bg-none p-4 h-64 rounded-2xl w-full hover:border-4 hover:border-sky-500">
+                        <div id="event4"
+                            class="allEvent bg-none p-4 h-64 rounded-2xl w-full hover:border-4 hover:border-sky-500">
                             <p id="event-name4"></p>
                             <p id="event-image4"></p>
                             <p id="event-venue4"></p>
@@ -95,7 +111,8 @@
                         </div>
                     </a>
                     <a href="" id="event-link5" target="_blank">
-                        <div id="event5" class="allEvent bg-none p-4 h-64 rounded-2xl w-full hover:border-4 hover:border-sky-500">
+                        <div id="event5"
+                            class="allEvent bg-none p-4 h-64 rounded-2xl w-full hover:border-4 hover:border-sky-500">
                             <p id="event-name5"></p>
                             <p id="event-image5"></p>
                             <p id="event-venue5"></p>
@@ -106,14 +123,22 @@
 
                 </div>
 
-                <div id="brewery-container flex flex-wrap"
-                    class="flex flex-col lg:grid lg:grid-cols-2 gap-2 mx-2 place-content-evenly border-l-4 border-white pl-4 ">
 
-                    
+                <div id="brewery-container"
+                    class="flex flex-col lg:grid lg:grid-cols-2 gap-2 mx-2 place-content-evenly border-l-4 border-white pl-4">
+
+
+                    <div id="brewery-h2-div" class="text-center  w-full col-span-2">
+                        <!-- <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Events Near
+                        Your Destination:</h2>
+                    <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Breweries
+                        Near Your Destination:</h2> -->
+                    </div>
 
                     <div class="eachDivWrapper">
                         <a href="" class="allBrewLink" target="_blank">
-                            <div id="brewery0" class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                            <div id="brewery0"
+                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
                                 <p id="name0"></p>
                                 <p id="type0"></p>
                                 <p id="address0"></p>
@@ -128,7 +153,8 @@
                     </div>
                     <div class="eachDivWrapper">
                         <a href="" class="allBrewLink" target="_blank">
-                            <div id="brewery1" class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                            <div id="brewery1"
+                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
                                 <p id="name1"></p>
                                 <p id="type1"></p>
                                 <p id="address1"></p>
@@ -144,7 +170,8 @@
 
                     <div class="eachDivWrapper">
                         <a href="" class="allBrewLink" target="_blank">
-                            <div id="brewery2" class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                            <div id="brewery2"
+                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
                                 <p id="name2"></p>
                                 <p id="type2"></p>
                                 <p id="address2"></p>
@@ -160,7 +187,8 @@
 
                     <div class="eachDivWrapper">
                         <a href="" class="allBrewLink" target="_blank">
-                            <div id="brewery3" class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                            <div id="brewery3"
+                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
                                 <p id="name3"></p>
                                 <p id="type3"></p>
                                 <p id="address3"></p>
@@ -179,7 +207,8 @@
 
                         <a href="" class="allBrewLink" target="_blank">
 
-                            <div id="brewery4" class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                            <div id="brewery4"
+                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
                                 <p id="name4"></p>
                                 <p id="type4"></p>
                                 <p id="address4"></p>
@@ -196,7 +225,8 @@
 
                         <a href="" class="allBrewLink" target="_blank">
 
-                            <div id="brewery5" class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                            <div id="brewery5"
+                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
                                 <p id="name5"></p>
                                 <p id="type5"></p>
                                 <p id="address5"></p>
