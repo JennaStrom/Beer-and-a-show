@@ -10,7 +10,7 @@ header {
 
 .title {
     font-family: 'Bruno Ace SC', cursive;
-    font-size: 96px;
+    font-size: calc(75px + 0.390625vw);
     color: rgb(223, 227, 212);
     text-shadow: 4px 4px 4px  rgba(12, 22, 64, 0.705);
 }
