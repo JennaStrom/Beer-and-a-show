@@ -20,7 +20,7 @@ var city;
 function displayAllResults() {
     city = userCitySearch.value.trim()
     userTargetService = userSelection.value.trim()
-
+    
     if (!city) {
         return;
     }
@@ -28,30 +28,35 @@ function displayAllResults() {
 
     if (userTargetService === 'events') {
 
-        breweriesContainer.innerHTML = ''
+        // adds hidden to brewer container and removes hidden from event if it exists
 
         displayEvents()
         $('#content-containers').removeClass("lg:grid lg:grid-cols-2")
         $('#event-container').addClass("w-1/2")
+        $("#brewery-container").addClass('hidden')
+        $("#event-container").removeClass('hidden')
 
     } else if (userTargetService === 'breweries') {
 
-        // we can not clear this container, wh????????????????????????
-        eventsContainer.innerHTML = ''
+        // adds hidden to event container and removes hidden from brewery if it exists
 
         displayBreweries()
         $('#content-containers').removeClass("lg:grid lg:grid-cols-2")
         $('#brewery-container').addClass("w-1/2")
+        $("#event-container").addClass('hidden')
+        $("#brewery-container").removeClass('hidden')
+        
 
         // $('#event-container').attr('class', 'border-none')
     } else if (userTargetService === 'both') {
 
-        // eventsContainer.innerHTML = ''
-        // breweriesContainer.innerHTML = ''
+        // removes hidden from both containers if it exists 
 
-        displayEvents()
         displayBreweries()
-
+        displayEvents()
+        $('#content-containers').addClass("lg:grid lg:grid-cols-2")
+        $("#event-container").removeClass('hidden')
+        $("#brewer-container").removeClass('hidden')
         $('#event-container').removeClass("w-1/2")
         $('#brewery-container').removeClass("w-1/2")
         // $('#content-containers').addClass("lg:grid lg:grid-cols-2")
@@ -131,8 +136,13 @@ function displayEvents() {
         // new -------------------------------------------------
         .catch(err => {
             console.log('This is is an error, ' + err)
-            displayModal()
+            //Define variable to hold the error message
+            var messageheading = document.querySelector('#msg-heading')
+            messageheading.textContent = 'Error! unable to fetch the EVENTS data requested.'
+            //Set class to dynamically hide and display the two contaiers
             eventsContainer.addClass('hidden')
+            breweriesContainer.removeClass('hidden')
+            displayModal()
 
         })
 
@@ -149,6 +159,7 @@ function displayBreweries() {
     $('#brewery-h2-div').append(breweryHeading.text('Breweries Near Your Destination:'))
     $('#brewery-h2-div').attr("class", "my-4 w-full text-center underline-offset-8 text-2xl font-bold")
     $('#brewery-grid').addClass("border-x-4 border-white px-4")
+
 
     fetch('https://api.openbrewerydb.org/v1/breweries?by_city=' + city + '&per_page=6')
         .then(res => {
@@ -179,7 +190,7 @@ function displayBreweries() {
                             $("#type" + i).html(type + ' ')
                             $("#address" + i).html(address + ' ')
                             $("#phone" + i).html(phone + ' ')
-                            $("#website" + i).html("<a href=" + website + ">" + 'Click to visit Brewery Website')
+                            $("#website" + i).html("<a href=" + website + ">" + 'Click to Visit Brewery Website For More Info')
 
                             $(allLinkWrapper[i]).attr('href', data[i].website_url)
 
@@ -195,13 +206,20 @@ function displayBreweries() {
                 dataAvailability.text('Error: ' + res.statusText)
                 $('#response-notification').html(dataAvailability)
             }
+            
         })
         .catch(err => {
 
             console.log('This is is an error, ' + err)
-            // new -------------------------------------------------
-            displayModal()
+            //Define variable to hold the error message
+            var messageheading = document.querySelector('#msg-heading')
+            messageheading.textContent = 'Error! unable to fetch the BREWERIES data requested.'
+            //Set class to dynamically hide and display the two contaiers
+           
             breweriesContainer.addClass('hidden')
+            eventsContainer.removeClass('hidden')
+            displayModal()
+
         
         })
 
@@ -212,11 +230,7 @@ function displayBreweries() {
 //new----------------------------Display the error message 
 function displayModal() {
     var messageModal = $('#message-modal')
-
-    var messageheading = document.querySelector('#msg-heading')
-
-    messageheading.textContent = 'Error! unable to fetch the data requested.'
-
+ 
     var okButton = document.getElementById('ok-button')
     okButton.addEventListener('click', function () {
         messageModal.addClass('hidden')
