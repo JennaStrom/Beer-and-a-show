@@ -43,236 +43,229 @@
                 </div>
             </div>
 
+            <!-- new---------------------------------------- -->
             <div id="response-notification"></div>
-
-
+            <div id="main-msgcontainer" class="flex justify-center ">
+                <div id="message-modal"
+                    class="hidden bg-gradient-to-r from-cyan-500 via-cyan-700 to-sky-700 justify-center border-4 fixed w-1/4 mx-auto">
+                    <div class="flex flex-wrap br-ingredien-t-r ">
+                        <div class="fixed-r bg-transparent" aria-hidden="true">
+                            <div class="absolute opacity-75"></div>
+                        </div>
+                        <div class="relative text-white text-center overflow-x-auto mx-auto ">
+                            <div id="message-miniDiv" class="p-2 bg-white my-2 text-red-500 font-semibold">
+                                <h4 id="msg-heading"></h4>
+                                <p >Please try again with a correct url path</p>
+                            </div>
+                            <button type="button" id="ok-button"
+                                    class="w-1/4 rounded-lg ring-offset-2 ring-2 opacity-100 my-1 box-border hover:box-content bg-cyan-500 hover:bg-red-500"> Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
             <div id="content-containers"
                 class="flex flex-wrap justify-center gap-6 my-10  bg-gradient-to-r from-blue-950 via-teal-600 to-blue-950 lg:grid lg:grid-cols-2">
 
-                <div id="event-container"
-                    class="">
+                <div id="event-container">
 
                     <div id="event-h2-div" class=" text-center w-full col-span-2">
-                        <!-- <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Events Near
-                    Your Destination:</h2>
-                <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Breweries
-                    Near Your Destination:</h2> -->
+
                     </div>
                     <div id="event-grid" class="flex  flex-wrap gap-2 place-content-evenly lg:grid lg:grid-cols-2">
-                    <!--div boxes for a list of events will be created and appended here  -->
-                    <a href="" id="event-link0" target="_blank">
-                        <div id="event0"
-                            class="allEvent bg-none p-4 rounded-2xl h-64 w-full brightness-100 hover:border-4 hover:border-emerald-200">
-                            <p id="event-name0"></p>
-                            <p id="event-image0"></p>
-                            <p id="event-venue0"></p>
-                            <p id="event-date0"></p>
-                            <p id="event-url0"></p>
-                        </div>
-                    </a>
-                    <a href="" id="event-link1" target="_blank">
-                        <div id="event1"
-                            class="allEvent bg-none p-4 h-64 rounded-2xl  w-full  hover:border-4 hover:border-emerald-200">
-                            <p id="event-name1"></p>
-                            <p id="event-image1"></p>
-                            <p id="event-venue1"></p>
-                            <p id="event-date1"></p>
-                            <p id="event-url1"></p>
-                        </div>
-                    </a>
-                    <a href="" id="event-link2" target="_blank">
-                        <div id="event2"
-                            class="allEvent bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
-                            <p id="event-name2"></p>
-                            <p id="event-image2"></p>
-                            <p id="event-venue2"></p>
-                            <p id="event-date2"></p>
-                            <p id="event-url2"></p>
-                        </div>
-                    </a>
-                    <a href="" id="event-link3" target="_blank">
-                        <div id="event3"
-                            class="allEvent bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
-                            <p id="event-name3"></p>
-                            <p id="event-image3"></p>
-                            <p id="event-venue3"></p>
-                            <p id="event-date3"></p>
-                            <p id="event-url3"></p>
-                        </div>
-                    </a>
-                    <a href="" id="event-link4" target="_blank">
-                        <div id="event4"
-                            class="allEvent bg-none p-4 h-64 rounded-2xl w-full hover:border-4 hover:border-emerald-200">
-                            <p id="event-name4"></p>
-                            <p id="event-image4"></p>
-                            <p id="event-venue4"></p>
-                            <p id="event-date4"></p>
-                            <p id="event-url4"></p>
-                        </div>
-                    </a>
-                    <a href="" id="event-link5" target="_blank">
-                        <div id="event5"
-                            class="allEvent bg-none p-4 h-64 rounded-2xl w-full hover:border-4 hover:border-emerald-200">
-                            <p id="event-name5"></p>
-                            <p id="event-image5"></p>
-                            <p id="event-venue5"></p>
-                            <p id="event-date5"></p>
-                            <p id="event-url5"></p>
-                        </div>
-                    </a>
-                
+                        <!--div boxes for a list of events will be created and appended here  -->
+                        <a href="" id="event-link0" target="_blank">
+                            <div id="event0"
+                                class="allEvent bg-none p-4 rounded-2xl h-64 w-full brightness-100 hover:border-4 hover:border-sky-500">
+                                <p id="event-name0"></p>
+                                <p id="event-image0"></p>
+                                <p id="event-venue0"></p>
+                                <p id="event-date0"></p>
+                                <p id="event-url0"></p>
+                            </div>
+                        </a>
+                        <a href="" id="event-link1" target="_blank">
+                            <div id="event1"
+                                class="allEvent bg-none p-4 h-64 rounded-2xl  w-full  hover:border-4 hover:border-sky-500">
+                                <p id="event-name1"></p>
+                                <p id="event-image1"></p>
+                                <p id="event-venue1"></p>
+                                <p id="event-date1"></p>
+                                <p id="event-url1"></p>
+                            </div>
+                        </a>
+                        <a href="" id="event-link2" target="_blank">
+                            <div id="event2"
+                                class="allEvent bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                <p id="event-name2"></p>
+                                <p id="event-image2"></p>
+                                <p id="event-venue2"></p>
+                                <p id="event-date2"></p>
+                                <p id="event-url2"></p>
+                            </div>
+                        </a>
+                        <a href="" id="event-link3" target="_blank">
+                            <div id="event3"
+                                class="allEvent bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                <p id="event-name3"></p>
+                                <p id="event-image3"></p>
+                                <p id="event-venue3"></p>
+                                <p id="event-date3"></p>
+                                <p id="event-url3"></p>
+                            </div>
+                        </a>
+                        <a href="" id="event-link4" target="_blank">
+                            <div id="event4"
+                                class="allEvent bg-none p-4 h-64 rounded-2xl w-full hover:border-4 hover:border-sky-500">
+                                <p id="event-name4"></p>
+                                <p id="event-image4"></p>
+                                <p id="event-venue4"></p>
+                                <p id="event-date4"></p>
+                                <p id="event-url4"></p>
+                            </div>
+                        </a>
+                        <a href="" id="event-link5" target="_blank">
+                            <div id="event5"
+                                class="allEvent bg-none p-4 h-64 rounded-2xl w-full hover:border-4 hover:border-sky-500">
+                                <p id="event-name5"></p>
+                                <p id="event-image5"></p>
+                                <p id="event-venue5"></p>
+                                <p id="event-date5"></p>
+                                <p id="event-url5"></p>
+                            </div>
+                        </a>
+
+                    </div>
                 </div>
-            </div>
 
 
-                <div id="brewery-container"
-                    class="">
+                <div id="brewery-container">
 
-                
+
                     <div id="brewery-h2-div" class="text-center  w-full col-span-2">
-                        <!-- <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Events Near
-                        Your Destination:</h2>
-                    <h2 id="eventList-heading" class="flex justify-center underline-offset-8 text-2xl font-bold">Breweries
-                        Near Your Destination:</h2> -->
+
                     </div>
-                                                  
+
                     <div id="brewery-grid" class="flex flex-wrap lg:grid lg:grid-cols-2 gap-2  place-content-evenly">
-                    <div class="eachDivWrapper">
-                        <a href="" class="allBrewLink" target="_blank">
-                            <div id="brewery0"
-                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
-                                <p id="name0"></p>
-                                <p id="type0"></p>
-                                <p id="address0"></p>
-                                <p id="phone0"></p>
-                                <p id="website0"></p>
-                            </div>
+                        <div class="eachDivWrapper">
+                            <a href="" class="allBrewLink" target="_blank">
+                                <div id="brewery0"
+                                    class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                    <p id="name0"></p>
+                                    <p id="type0"></p>
+                                    <p id="address0"></p>
+                                    <p id="phone0"></p>
+                                    <p id="website0"></p>
+                                </div>
 
-                        </a>
-                        <!--<button
-                            class="rounded-full bg-emerald-200/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
+                            </a>
+                            <!--<button
+                            class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
                             here to view customer review</button> -->
-                    </div>
-                    <div class="eachDivWrapper">
-                        <a href="" class="allBrewLink" target="_blank">
-                            <div id="brewery1"
-                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
-                                <p id="name1"></p>
-                                <p id="type1"></p>
-                                <p id="address1"></p>
-                                <p id="phone1"></p>
-                                <p id="website1"></p>
-                            </div>
+                        </div>
+                        <div class="eachDivWrapper">
+                            <a href="" class="allBrewLink" target="_blank">
+                                <div id="brewery1"
+                                    class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                    <p id="name1"></p>
+                                    <p id="type1"></p>
+                                    <p id="address1"></p>
+                                    <p id="phone1"></p>
+                                    <p id="website1"></p>
+                                </div>
 
-                        </a>
-                        <!--<button
-                            class="rounded-full bg-emerald-200/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
+                            </a>
+                            <!--<button
+                            class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
                             here to view customer review</button> -->
-                    </div>
+                        </div>
 
-                    <div class="eachDivWrapper">
-                        <a href="" class="allBrewLink" target="_blank">
-                            <div id="brewery2"
-                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
-                                <p id="name2"></p>
-                                <p id="type2"></p>
-                                <p id="address2"></p>
-                                <p id="phone2"></p>
-                                <p id="website2"></p>
-                            </div>
+                        <div class="eachDivWrapper">
+                            <a href="" class="allBrewLink" target="_blank">
+                                <div id="brewery2"
+                                    class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                    <p id="name2"></p>
+                                    <p id="type2"></p>
+                                    <p id="address2"></p>
+                                    <p id="phone2"></p>
+                                    <p id="website2"></p>
+                                </div>
 
-                        </a>
-                        <!--<button
-                            class="rounded-full bg-emerald-200/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
+                            </a>
+                            <!--<button
+                            class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
                             here to view customer review</button> -->
-                    </div>
+                        </div>
 
-                    <div class="eachDivWrapper">
-                        <a href="" class="allBrewLink" target="_blank">
-                            <div id="brewery3"
-                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
-                                <p id="name3"></p>
-                                <p id="type3"></p>
-                                <p id="address3"></p>
-                                <p id="phone3"></p>
-                                <p id="website3"></p>
-                            </div>
+                        <div class="eachDivWrapper">
+                            <a href="" class="allBrewLink" target="_blank">
+                                <div id="brewery3"
+                                    class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                    <p id="name3"></p>
+                                    <p id="type3"></p>
+                                    <p id="address3"></p>
+                                    <p id="phone3"></p>
+                                    <p id="website3"></p>
+                                </div>
 
-                        </a>
+                            </a>
 
-                        <!--<button
-                            class="rounded-full bg-emerald-200/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
+                            <!--<button
+                            class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
                             here to view customer review</button>-->
-                    </div>
+                        </div>
 
-                    <div class="eachDivWrapper">
+                        <div class="eachDivWrapper">
 
-                        <a href="" class="allBrewLink" target="_blank">
+                            <a href="" class="allBrewLink" target="_blank">
 
-                            <div id="brewery4"
-                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
-                                <p id="name4"></p>
-                                <p id="type4"></p>
-                                <p id="address4"></p>
-                                <p id="phone4"></p>
-                                <p id="website4"></p>
-                            </div>
+                                <div id="brewery4"
+                                    class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                    <p id="name4"></p>
+                                    <p id="type4"></p>
+                                    <p id="address4"></p>
+                                    <p id="phone4"></p>
+                                    <p id="website4"></p>
+                                </div>
 
-                        </a>
-                        <!--<button
-                            class="rounded-full bg-emerald-200/50 outline outline-offset-2 outline-pink-500 opacity-75 focus-visible:ring">Click
+                            </a>
+                            <!--<button
+                            class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75 focus-visible:ring">Click
                             here to view customer review</button>-->
-                    </div>
-                    <div class="eachDivWrapper">
+                        </div>
+                        <div class="eachDivWrapper">
 
-                        <a href="" class="allBrewLink" target="_blank">
+                            <a href="" class="allBrewLink" target="_blank">
 
-                            <div id="brewery5"
-                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
-                                <p id="name5"></p>
-                                <p id="type5"></p>
-                                <p id="address5"></p>
-                                <p id="phone5"></p>
-                                <p id="website5"></p>
-                            </div>
+                                <div id="brewery5"
+                                    class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                    <p id="name5"></p>
+                                    <p id="type5"></p>
+                                    <p id="address5"></p>
+                                    <p id="phone5"></p>
+                                    <p id="website5"></p>
+                                </div>
 
-                        </a>
-                        <!--<button
-                            class="rounded-full bg-emerald-200/50 outline outline-offset-2 outline-pink-500 opacity-75 focus-visible:ring">Click
+                            </a>
+                            <!--<button
+                            class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75 focus-visible:ring">Click
                             here to view customer review</button>-->
+                        </div>
                     </div>
-                </div>
-
-                </div>
-                    <!-- when the customer's review button get clicked it displays all the comments about each breweries  -->
-                    <!-- <button id="review-btn" class="hide-btn"></button> -->
-                    <!--a div with a list of customer review of the breweries will be appended here.   -->
 
                 </div>
+                <!-- when the customer's review button get clicked it displays all the comments about each breweries  -->
+                <!-- <button id="review-btn" class="hide-btn"></button> -->
+                <!--a div with a list of customer review of the breweries will be appended here.   -->
+
             </div>
-
-            <!-- <div id="map-container"></div>
-        
-        <div class="cutomer-review"></div>
-        <div id="listOfThings-todo"> -->
-            <!-- when the things to do button get clicked it displays all the information/activities in the chosen city -->
-            <!-- <button id="things-todo-btn" class="hide-btn"></button> -->
-            <!-- <button id="things-todo-btn" class="hide-btn"></button> -->
-            <!--div with a list of events will be appended here  -->
-            <!-- </div>  -->
-
+        </div>
     </main>
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="./assets/script.js"></script>
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlat17P_RNHtWDKcyqXPwNrq5p78AUymk&libraries=places"></script> -->
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlat17P_RNHtWDKcyqXPwNrq5p78AUymk&libraries=places&callback=initMap"></script> -->
-
-
-
-
+    
 </body>
 
 </html>
