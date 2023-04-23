@@ -1,21 +1,23 @@
 body {
-    background-color: rgb(130, 172, 191);
+    background-color: rgb(223, 227, 212);
 }
 
 /* temporarily */
 header {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     text-align: center;
 }
 
 .title {
-    text-shadow: black 4px 4px 4px;
-    color: rgba(255, 255, 255, 0.835);
+    font-family: 'Bruno Ace SC', cursive;
+    font-size: 96px;
+    color: rgb(223, 227, 212);
+    text-shadow: 4px 4px 4px  rgba(12, 22, 64, 0.705);
 }
 
 .event-font {
     color: white;
-    text-shadow: 4px 4px 4px white;
+    text-shadow: 4px 4px 4px rgb(33, 76, 63);
 }
 
 #search-div {
@@ -34,18 +36,26 @@ header {
 }
 
 #search-button {
-    background-color: rgba(255, 255, 255, 0.705);
+    background-color: rgb(223, 227, 212);
     border-radius: 5px;
     padding: 1%;
 }
 
 #quote {
     text-align: center;
-    color: rgba(255, 255, 255, 0.705);
+    color: rgba(12, 22, 64, 0.907);
+    /* text-shadow: 2px 2px 2px whitesmoke; */
+    
 }
 
-#eventList-heading {
-    color: rgba(255, 255, 255, 0.705);
+#brewery-h2-div {
+    color: rgb(223, 227, 212);
+    text-shadow: 2px 2px 2px  rgba(12, 22, 64, 0.705);
+}
+
+#event-h2-div {
+    color: rgb(223, 227, 212);
+    text-shadow: 2px 2px 2px  rgba(12, 22, 64, 0.705);
 }
 
 #containers {
