@@ -6,22 +6,20 @@ var apiKey = "MBTqnGkdcHr9yyjvkUMAekQ48KJAGxYA";
 var userSelection = document.getElementById('my-selection');
 var userCitySearch = document.getElementById('city-search');
 var searchButton = document.querySelector('#search-button')
-var breweriesContainer = document.getElementById('brewery-container')
+var breweriesContainer = $('#brewery-container')
 var eventsContainer = $('#event-container')
 var allLinkWrapper = $('.allBrewLink')
 var mainContentContainer = $('.mainContent-container ')
 var allEvents = $('.allEvent')
 var ContentContainer = $('#content-containers')
 
-
 var userTargetService;
 var city;
 
-
+//
 function displayAllResults() {
     city = userCitySearch.value.trim()
     userTargetService = userSelection.value.trim()
-
 
     if (!city) {
         return;
@@ -32,56 +30,60 @@ function displayAllResults() {
 
         breweriesContainer.innerHTML = ''
 
-        displayEvents() 
+        displayEvents()
         $('#content-containers').removeClass("lg:grid lg:grid-cols-2")
         $('#event-container').addClass("w-1/2")
-       
 
     } else if (userTargetService === 'breweries') {
 
-
+        // we can not clear this container, wh????????????????????????
+        eventsContainer.innerHTML = ''
 
         displayBreweries()
         $('#content-containers').removeClass("lg:grid lg:grid-cols-2")
         $('#brewery-container').addClass("w-1/2")
-       
 
-        eventsContainer.innerHTML = ''
         // $('#event-container').attr('class', 'border-none')
-
-        // eventsContainer.classList.add('hidden')
-
     } else if (userTargetService === 'both') {
-        displayBreweries()
-        displayEvents()
 
-        // ContentContainer.attr('class', 'flex flex-col  my-10 mx-2 bg-gradient-to-r from-cyan-900 via-cyan-700 to-sky-900 opacity-100 brightness-100 lg:grid lg:grid-cols-2 place-self-center')
+        // eventsContainer.innerHTML = ''
+        // breweriesContainer.innerHTML = ''
+
+        displayEvents()
+        displayBreweries()
+
+        $('#event-container').removeClass("w-1/2")
+        $('#brewery-container').removeClass("w-1/2")
+        // $('#content-containers').addClass("lg:grid lg:grid-cols-2")
 
     } else {
         return
     }
 }
 
-searchButton.addEventListener('click', function (event) {
-    event.preventDefault()
-    displayAllResults()
+//To enable the users change the selection without refreshing the page?? problem with removing events
+$(userSelection).on('change', function () {
 
-})
-
-
-document.addEventListener('keydown', function (event) {
-    if (event.key == 13) {
+    searchButton.addEventListener('click', function (event) {
         event.preventDefault()
         displayAllResults()
 
-    }
+    })
 
+    document.addEventListener('keydown', function (event) {
+        if (event.key == 13) {
+            event.preventDefault()
+            displayAllResults()
+
+        }
+
+
+    })
 
 })
 
-
+//
 function displayEvents() {
-
 
     city = userCitySearch.value.trim()
 
@@ -123,17 +125,23 @@ function displayEvents() {
                 $("#event-link" + i).attr("href", data._embedded.events[i].url)
                 allEvents.show()
 
-
             }
 
+        })
+        // new -------------------------------------------------
+        .catch(err => {
+            console.log('This is is an error, ' + err)
+            displayModal()
+            eventsContainer.addClass('hidden')
 
         })
-
 
 }
 console.log(userCitySearch.value)
 
 function displayBreweries() {
+
+
     city = userCitySearch.value.trim()
     console.log(city)
     var breweryHeading = $('<h2/>')
@@ -188,13 +196,35 @@ function displayBreweries() {
                 $('#response-notification').html(dataAvailability)
             }
         })
-        // .catch (err => {
-        // !!!!we use modal here to display a connection failure
-        // })
+        .catch(err => {
+
+            console.log('This is is an error, ' + err)
+            // new -------------------------------------------------
+            displayModal()
+            breweriesContainer.addClass('hidden')
+
+        })
 
 
 }
 
+
+//new----------------------------Display the error message 
+function displayModal() {
+    var messageModal = $('#message-modal')
+
+    var messageheading = document.querySelector('#msg-heading')
+
+    messageheading.textContent = 'Error! unable to fetch the data requested.'
+
+    var okButton = document.getElementById('ok-button')
+    okButton.addEventListener('click', function () {
+        messageModal.addClass('hidden')
+    })
+    messageModal.removeClass('hidden')
+
+
+}
 
 
 
