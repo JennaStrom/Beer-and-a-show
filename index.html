@@ -9,26 +9,28 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Beer and a Show</title>
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Bruno+Ace+SC&display=swap" rel="stylesheet">
 </head>
 
 
 <body class="font-family: arial black">
-    <header class="p-20 text-lg justify-center bg-gradient-to-r from-cyan-900 via-cyan-700 to-sky-900 h14">
+    <header class="p-20 text-lg justify-center bg-gradient-to-r from-blue-950 via-teal-600 to-blue-950 h14">
         <img src="" alt="">
-        <h1 class="title text-6xl font-bold">Beer and a Show</h1>
+        <h1 class="title text-10xl font-bold">Beer and a Show</h1>
     </header>
-    <div id="quote" class="p-10 underline underline-offset-8 text-3xl font-bold">Heading on a trip? Enter the city you
-        are travelling to for a list of 6 local breweries and events coming up! Use the drop down to filter for just
-        Events or Breweries.</div>
+    <div id="quote" class="p-5 underline-offset-8 text-4xl font-bold">Plan your whole night out in one convenient place!</div>
+        <div id="quote" class="p-5 underline-offset-8 text-2xl font-bold">Enter any city to search for a list of 6 local breweries and 6 upcoming events!</div>
     <main>
         <!-- to scroll in all direction if needed -->
         <div class="main-container">
             <div class="flex justify-center ">
                 <div id="search-div"
-                    class="main-form flex items-center bg-gradient-to-r from-cyan-900 via-cyan-700 to-sky-900 justify-center w-2/5 shadow-xl">
+                    class="main-form flex items-center bg-gradient-to-r from-blue-950 via-teal-600 to-blue-950 justify-center w-2/5 shadow-xl">
                     <form class="p-3">
                         <select name="list-type" id="my-selection" class="my-4 w-full shadow-md">
-                            <option value="">Choose your search target:</option>
+                            <option value="">Please Select One:</option>
                             <option value="events">only events</option>
                             <option value="breweries">only breweries</option>
                             <option value="both">both events and breweries</option>
@@ -45,7 +47,7 @@
 
 
             <div id="content-containers"
-                class="flex flex-wrap justify-center gap-6 my-10  bg-gradient-to-r from-cyan-900 via-cyan-700 to-sky-900 lg:grid lg:grid-cols-2">
+                class="flex flex-wrap justify-center gap-6 my-10  bg-gradient-to-r from-blue-950 via-teal-600 to-blue-950 lg:grid lg:grid-cols-2">
 
                 <div id="event-container"
                     class="">
@@ -60,7 +62,7 @@
                     <!--div boxes for a list of events will be created and appended here  -->
                     <a href="" id="event-link0" target="_blank">
                         <div id="event0"
-                            class="allEvent bg-none p-4 rounded-2xl h-64 w-full brightness-100 hover:border-4 hover:border-sky-500">
+                            class="allEvent bg-none p-4 rounded-2xl h-64 w-full brightness-100 hover:border-4 hover:border-emerald-200">
                             <p id="event-name0"></p>
                             <p id="event-image0"></p>
                             <p id="event-venue0"></p>
@@ -70,7 +72,7 @@
                     </a>
                     <a href="" id="event-link1" target="_blank">
                         <div id="event1"
-                            class="allEvent bg-none p-4 h-64 rounded-2xl  w-full  hover:border-4 hover:border-sky-500">
+                            class="allEvent bg-none p-4 h-64 rounded-2xl  w-full  hover:border-4 hover:border-emerald-200">
                             <p id="event-name1"></p>
                             <p id="event-image1"></p>
                             <p id="event-venue1"></p>
@@ -80,7 +82,7 @@
                     </a>
                     <a href="" id="event-link2" target="_blank">
                         <div id="event2"
-                            class="allEvent bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                            class="allEvent bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
                             <p id="event-name2"></p>
                             <p id="event-image2"></p>
                             <p id="event-venue2"></p>
@@ -90,7 +92,7 @@
                     </a>
                     <a href="" id="event-link3" target="_blank">
                         <div id="event3"
-                            class="allEvent bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                            class="allEvent bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
                             <p id="event-name3"></p>
                             <p id="event-image3"></p>
                             <p id="event-venue3"></p>
@@ -100,7 +102,7 @@
                     </a>
                     <a href="" id="event-link4" target="_blank">
                         <div id="event4"
-                            class="allEvent bg-none p-4 h-64 rounded-2xl w-full hover:border-4 hover:border-sky-500">
+                            class="allEvent bg-none p-4 h-64 rounded-2xl w-full hover:border-4 hover:border-emerald-200">
                             <p id="event-name4"></p>
                             <p id="event-image4"></p>
                             <p id="event-venue4"></p>
@@ -110,7 +112,7 @@
                     </a>
                     <a href="" id="event-link5" target="_blank">
                         <div id="event5"
-                            class="allEvent bg-none p-4 h-64 rounded-2xl w-full hover:border-4 hover:border-sky-500">
+                            class="allEvent bg-none p-4 h-64 rounded-2xl w-full hover:border-4 hover:border-emerald-200">
                             <p id="event-name5"></p>
                             <p id="event-image5"></p>
                             <p id="event-venue5"></p>
@@ -138,7 +140,7 @@
                     <div class="eachDivWrapper">
                         <a href="" class="allBrewLink" target="_blank">
                             <div id="brewery0"
-                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
                                 <p id="name0"></p>
                                 <p id="type0"></p>
                                 <p id="address0"></p>
@@ -148,13 +150,13 @@
 
                         </a>
                         <!--<button
-                            class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
+                            class="rounded-full bg-emerald-200/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
                             here to view customer review</button> -->
                     </div>
                     <div class="eachDivWrapper">
                         <a href="" class="allBrewLink" target="_blank">
                             <div id="brewery1"
-                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
                                 <p id="name1"></p>
                                 <p id="type1"></p>
                                 <p id="address1"></p>
@@ -164,14 +166,14 @@
 
                         </a>
                         <!--<button
-                            class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
+                            class="rounded-full bg-emerald-200/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
                             here to view customer review</button> -->
                     </div>
 
                     <div class="eachDivWrapper">
                         <a href="" class="allBrewLink" target="_blank">
                             <div id="brewery2"
-                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
                                 <p id="name2"></p>
                                 <p id="type2"></p>
                                 <p id="address2"></p>
@@ -181,14 +183,14 @@
 
                         </a>
                         <!--<button
-                            class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
+                            class="rounded-full bg-emerald-200/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
                             here to view customer review</button> -->
                     </div>
 
                     <div class="eachDivWrapper">
                         <a href="" class="allBrewLink" target="_blank">
                             <div id="brewery3"
-                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
                                 <p id="name3"></p>
                                 <p id="type3"></p>
                                 <p id="address3"></p>
@@ -199,7 +201,7 @@
                         </a>
 
                         <!--<button
-                            class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
+                            class="rounded-full bg-emerald-200/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
                             here to view customer review</button>-->
                     </div>
 
@@ -208,7 +210,7 @@
                         <a href="" class="allBrewLink" target="_blank">
 
                             <div id="brewery4"
-                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
                                 <p id="name4"></p>
                                 <p id="type4"></p>
                                 <p id="address4"></p>
@@ -218,7 +220,7 @@
 
                         </a>
                         <!--<button
-                            class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75 focus-visible:ring">Click
+                            class="rounded-full bg-emerald-200/50 outline outline-offset-2 outline-pink-500 opacity-75 focus-visible:ring">Click
                             here to view customer review</button>-->
                     </div>
                     <div class="eachDivWrapper">
@@ -226,7 +228,7 @@
                         <a href="" class="allBrewLink" target="_blank">
 
                             <div id="brewery5"
-                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-emerald-200">
                                 <p id="name5"></p>
                                 <p id="type5"></p>
                                 <p id="address5"></p>
@@ -236,7 +238,7 @@
 
                         </a>
                         <!--<button
-                            class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75 focus-visible:ring">Click
+                            class="rounded-full bg-emerald-200/50 outline outline-offset-2 outline-pink-500 opacity-75 focus-visible:ring">Click
                             here to view customer review</button>-->
                     </div>
                 </div>
