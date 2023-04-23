@@ -18,7 +18,7 @@
 <body class="font-family: arial black">
     <header class="p-20 justify-center bg-gradient-to-r from-blue-950 via-teal-600 to-blue-950 h14">
         <img src="" alt="">
-        <h1 class="title text-10xl font-bold">Beer and a Show</h1>
+        <h1 class="title  text-10xl font-bold">Beer and a Show</h1>
     </header>
     <div id="quote" class="p-5 underline-offset-8 text-4xl font-bold">Plan your whole night out in one convenient place!</div>
         <div id="quote" class="p-5 underline-offset-8 text-2xl font-bold">Enter any city to search for a list of 6 local breweries and 6 upcoming events!</div>
@@ -45,9 +45,9 @@
 
             <!-- new---------------------------------------- -->
             <div id="response-notification"></div>
-            <div id="main-msgcontainer" class="flex justify-center ">
+            <div id="main-msgcontainer" class="flex justify-center relative">
                 <div id="message-modal"
-                    class="hidden bg-gradient-to-r from-blue-950 via-teal-600 to-blue-950 justify-center border-4 fixed w-1/4 mx-auto">
+                    class="hidden bg-gradient-to-r from-blue-950 via-teal-600 to-blue-950 justify-center border-4 fixed z-40 w-1/4 mx-auto ">
                     <div class="flex flex-wrap br-ingredien-t-r ">
                         <div class="fixed-r bg-transparent" aria-hidden="true">
                             <div class="absolute opacity-75"></div>
@@ -73,7 +73,7 @@
                     <div id="event-h2-div" class=" text-center w-full col-span-2">
 
                     </div>
-                    <div id="event-grid" class="flex  flex-wrap gap-2 place-content-evenly lg:grid lg:grid-cols-2">
+                    <div id="event-grid" class="flex  flex-wrap gap-2 place-content-evenly lg:grid lg:grid-cols-2 pb-5">
                         <!--div boxes for a list of events will be created and appended here  -->
                         <a href="" id="event-link0" target="_blank">
                             <div id="event0"
@@ -140,18 +140,18 @@
                 </div>
 
 
-                <div id="brewery-container">
+                <div id="brewery-container" class="">
 
 
                     <div id="brewery-h2-div" class="text-center  w-full col-span-2">
 
                     </div>
 
-                    <div id="brewery-grid" class="flex flex-wrap lg:grid lg:grid-cols-2 gap-2  place-content-evenly">
-                        <div class="eachDivWrapper">
+                    <div id="brewery-grid" class="flex flex-wrap lg:grid lg:grid-cols-2 gap-2  place-content-evenly pb-5">
+                        
                             <a href="" class="allBrewLink" target="_blank">
                                 <div id="brewery0"
-                                    class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                    class="bg-none p-4 h-64 rounded-2xl  min-w-1/2 w-full hover:border-4 hover:border-sky-500">
                                     <p id="name0"></p>
                                     <p id="type0"></p>
                                     <p id="address0"></p>
@@ -163,11 +163,11 @@
                             <!--<button
                             class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
                             here to view customer review</button> -->
-                        </div>
-                        <div class="eachDivWrapper">
+                        
+                        
                             <a href="" class="allBrewLink" target="_blank">
                                 <div id="brewery1"
-                                    class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                    class="bg-none p-4 h-64 rounded-2xl min-w-1/2 w-full hover:border-4 hover:border-sky-500">
                                     <p id="name1"></p>
                                     <p id="type1"></p>
                                     <p id="address1"></p>
@@ -179,12 +179,12 @@
                             <!--<button
                             class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
                             here to view customer review</button> -->
-                        </div>
+                       
 
-                        <div class="eachDivWrapper">
+                        
                             <a href="" class="allBrewLink" target="_blank">
                                 <div id="brewery2"
-                                    class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                    class="bg-none p-4 h-64 rounded-2xl min-w-1/2 w-full hover:border-4 hover:border-sky-500">
                                     <p id="name2"></p>
                                     <p id="type2"></p>
                                     <p id="address2"></p>
@@ -196,12 +196,12 @@
                             <!--<button
                             class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
                             here to view customer review</button> -->
-                        </div>
+                        
 
-                        <div class="eachDivWrapper">
+                        
                             <a href="" class="allBrewLink" target="_blank">
                                 <div id="brewery3"
-                                    class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                    class="bg-none p-4 h-64 rounded-2xl min-w-1/2 w-full hover:border-4 hover:border-sky-500">
                                     <p id="name3"></p>
                                     <p id="type3"></p>
                                     <p id="address3"></p>
@@ -214,14 +214,14 @@
                             <!--<button
                             class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75">Click
                             here to view customer review</button>-->
-                        </div>
+                       
 
-                        <div class="eachDivWrapper">
+                        
 
                             <a href="" class="allBrewLink" target="_blank">
 
                                 <div id="brewery4"
-                                    class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                    class="bg-none p-4 h-64 rounded-2xl min-w-1/2 w-full hover:border-4 hover:border-sky-500">
                                     <p id="name4"></p>
                                     <p id="type4"></p>
                                     <p id="address4"></p>
@@ -233,13 +233,13 @@
                             <!--<button
                             class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75 focus-visible:ring">Click
                             here to view customer review</button>-->
-                        </div>
-                        <div class="eachDivWrapper">
+                        
+                        
 
                             <a href="" class="allBrewLink" target="_blank">
 
                                 <div id="brewery5"
-                                    class="bg-none p-4 h-64 rounded-2xl  w-full hover:border-4 hover:border-sky-500">
+                                    class="bg-none p-4 h-64 rounded-2xl min-w-1/2 w-full hover:border-4 hover:border-sky-500">
                                     <p id="name5"></p>
                                     <p id="type5"></p>
                                     <p id="address5"></p>
@@ -251,7 +251,7 @@
                             <!--<button
                             class="rounded-full bg-sky-500/50 outline outline-offset-2 outline-pink-500 opacity-75 focus-visible:ring">Click
                             here to view customer review</button>-->
-                        </div>
+                        
                     </div>
 
                 </div>
