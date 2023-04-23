@@ -202,7 +202,7 @@ function displayBreweries() {
             // new -------------------------------------------------
             displayModal()
             breweriesContainer.addClass('hidden')
-
+        
         })
 
 
