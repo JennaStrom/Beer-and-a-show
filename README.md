@@ -10,7 +10,7 @@ Future development plans include adding the option for the user to select date r
 ## Usage
 To use this application, navigate to the link in the next section. You should be greeted with a landing page like you see below.
 
-*-----INSERT SCREENSHOTS HERE-----*
+<img width="1420" alt="Screenshot 2023-04-23 at 2 28 54 PM" src="https://user-images.githubusercontent.com/123525191/233860827-17856a08-3a8f-4cb1-9792-7933c2a6c925.png">
 
 Once you have landed on the site, select from the drop down menu whether you would like to search for Events, Breweries, or Both. Next, enter the city you would like to receive recommendations for. Once you submit your selections, the appropriate API's will be called and display information on upcoming events and/or local breweries for your city. Clicking on the cards that are generated will bring you to a ticketmaster page (for the events portion), or to the website of the brewery.
 
