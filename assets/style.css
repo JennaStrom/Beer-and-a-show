@@ -1,13 +1,15 @@
+/* Set the background color of the page*/
 body {
     background-color: rgb(223, 227, 212);
 }
 
-/* temporarily */
+/* Center the text of the header */
 header {
     /* background-color: aquamarine; */
     text-align: center;
 }
 
+/* Set the style for the main heading */
 .title {
     font-family: 'Bruno Ace SC', cursive;
     font-size: calc(75px + 0.390625vw);
@@ -15,32 +17,38 @@ header {
     text-shadow: 4px 4px 4px  rgba(12, 22, 64, 0.705);
 }
 
-.event-font {
+/* which element does this style target????????????????????????????? */
+/* .event-font {
     color: white;
     text-shadow: 4px 4px 4px rgb(33, 76, 63);
-}
+} */
 
+/* Set the style for the entire form container */
 #search-div {
     border-radius: 10px;
     padding: 1%;
 }
 
+/* Set the style for the selection dropdown  */
 #my-selection {
     border-radius: 5px;
     padding: 1%;
 }
 
+/* Set the style for the input field  */
 #city-search {
     border-radius: 5px;
     padding: 1%;
 }
 
+/* Set the style for the search button  */
 #search-button {
     background-color: rgb(223, 227, 212);
     border-radius: 5px;
     padding: 1%;
 }
 
+/* Set the sub-heading description text centered and colored  */
 #quote {
     text-align: center;
     color: rgba(12, 22, 64, 0.907);
@@ -48,50 +56,44 @@ header {
     
 }
 
+/* Style the heading of the brewery content */
 #brewery-h2-div {
     color: rgb(223, 227, 212);
     text-shadow: 2px 2px 2px  rgba(12, 22, 64, 0.705);
 }
 
+/* Style the heading of the event content */
 #event-h2-div {
     color: rgb(223, 227, 212);
     text-shadow: 2px 2px 2px  rgba(12, 22, 64, 0.705);
 }
 
-#containers {
+/* which element does this style target?????????????????????????? */
+/* #containers {
     border-radius: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
-}
+} */
 
+/* Set the background images of the mini-brewery boxes and style them*/
 #brewery0 {
     background-image: url('https://images.unsplash.com/photo-1555658636-6e4a36218be7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
     background-repeat: no-repeat;
     background-color: rgba(255, 255, 255, 0);
     background-size: cover;
-
-
 }
-
 #brewery1 {
     background-image: url('https://images.unsplash.com/photo-1542835497-a6813df96ed9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80');
     background-repeat: no-repeat;
     background-color: rgba(255, 255, 255, 0);
     background-size: cover;
-
-
 }
-
 #brewery2 {
     background-image: url('https://images.unsplash.com/photo-1584225064785-c62a8b43d148?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
     background-repeat: no-repeat;
     background-color: rgba(255, 255, 255, 0);
     background-size: cover;
-
-
 }
-
-
 #brewery3 {
     background-image: url('https://media.istockphoto.com/id/498866230/photo/toasting.jpg?s=1024x1024&w=is&k=20&c=cDo6CSpwfILNHXseJ27fe3zfUJdahn8Mfe6QjcscTKs=');
     background-repeat: no-repeat;
@@ -99,33 +101,21 @@ header {
     background-size: cover;
     color: black;
     text-shadow: 4px 4px 4px white;
-
-
 }
-
 #brewery4 {
     background-image: url('https://images.unsplash.com/photo-1626332714432-acccedc3691e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80');
     background-repeat: no-repeat;
     background-color: rgba(255, 255, 255, 0);
     background-size: cover;
-
-
 }
-
 #brewery5 {
     background-image: url('https://images.unsplash.com/photo-1575055328016-d94e5d9e3461?ixlib=rb-4.0.3&ixid=MnwxM[…]90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80');
     background-repeat: no-repeat;
     background-color: rgba(255, 255, 255, 0);
     background-size: cover;
-
-
 }
 
-/* NOT AFFECTING */
-/* .mainContent-container{
-    display: none;
-} */
-
+/* Set the text style and visibility for all clickable mini-brewery boxes */
 .allBrewLink {
     color: rgb(245, 250, 243);
     font-weight: bold;
@@ -134,6 +124,7 @@ header {
     display: none;
 }
 
+/* Set the text style and visibility for all mini-event boxes */
 .allEvent {
     color: rgb(245, 250, 243);
     font-weight: bold;
@@ -141,18 +132,8 @@ header {
     z-index: 1;
     display: none;
 }
-/* .hidden {
-    display: none;
-} */
 
-/* #event-container, #brewery-container {
-    display: none;
-} */
-
-/* button {
-    z-index: 1;
-} */
-
+/* Set the display property of elements with a class 'hidden' */
 .hidden {
     display: none;
 }
