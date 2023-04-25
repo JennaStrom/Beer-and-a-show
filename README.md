@@ -7,6 +7,25 @@ The application takes user inputs on the type of information the use would like 
 
 Future development plans include adding the option for the user to select date ranges for their trips and a budget option. At this time the application is intended for last minute plans.
 
+
+## User Story
+
+As a customer who love beer and show,
+I WANT to know the upcoming events and breweries in a particular city  
+SO THAT I can plan my leisure time
+
+## Acceptance Criteria
+
+GIVEN an application that provides select search and form inputs
+WHEN I search for a city
+THEN I am provided with the upcoming events with information that includes venue, artists, and bands.
+WHEN I search for a city,
+THEN I am presented with breweries in the city with information about name, address, type, and website of each brewery.
+WHEN I click a specific event box,
+THEN I am directed to the web site of its respective host.
+WHEN I click a web site address of the specific brewery,
+THEN I am directed to the respective site.
+
 ## Usage
 To use this application, navigate to the link in the next section. You should be greeted with a landing page like you see below.
 
@@ -24,8 +43,12 @@ You can change your selections after you have generated your recommendations (i.
 
 ## Screenshot
 
-## Authors and Acknowledgement
+## Authors 
 Created by: Nafbek Kebede ([github.com/Nafbek]), Nick Reece ([github.com/nreece6]), and Jenna Strom ([github.com/JennaStrom]).
+
+### Acknowledgement 
+
+The developers of this web app would like to express their gratitude to everyone who supported us with their ideas.
 
 ## Resources
 Balsamic used to wireframe the application [https://balsamiq.com/wireframes/?gclid=CjwKCAjw0N6hBhAUEiwAXab-TWKJB0yKqeJ_7Tdte4Hyz4W6o555mul9YcD4LX8WnNZJ7LODT6RMoBoCd1YQAvD_BwE]
