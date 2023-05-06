@@ -26,6 +26,16 @@ function displayAllResults() {
         return;
     }
 
+    //Store user data in local storage
+    var storeData = JSON.parse(localStorage.getItem('userInput')) || []
+    if (!storeData.some(element => {
+        return element.toLowerCase() === city.toLowerCase()
+    })) {
+        storeData.push(city)
+    }
+
+    localStorage.setItem('userInput', JSON.stringify(storeData))
+
     // A logic to display the result based on the user target selection from the dropdown
     if (userTargetService === 'events') {
 
@@ -137,7 +147,7 @@ function displayEvents() {
         .catch(err => {
             console.log('This is is an error fetching EVENTS data, ' + err)
 
-            
+
             //Define variable to hold the error message
             var messageheading = document.querySelector('#msg-heading')
             messageheading.textContent = 'Error! unable to fetch the EVENTS data requested.' + err
@@ -216,7 +226,7 @@ function displayBreweries() {
             //Set class to dynamically hide and display the two contaiers
             breweriesContainer.addClass('hidden')
             eventsContainer.removeClass('hidden')
-        
+
             displayModal()
         })
 
