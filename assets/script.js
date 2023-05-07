@@ -14,6 +14,7 @@ var ContentContainer = $('#content-containers')
 var userTargetService;
 var city;
 
+
 //Display the result on the page
 function displayAllResults() {
 
@@ -48,14 +49,14 @@ function displayAllResults() {
 
 
     } else if (userTargetService === 'both') {
-
-        displayEvents()
         displayBreweries()
+        displayEvents()
+        // displayBreweries()
 
         // Removes the class 'hidden' from both containers if it exists 
         $('#content-containers').addClass("lg:grid lg:grid-cols-2")
         $("#event-container").removeClass('hidden')
-        $("#brewer-container").removeClass('hidden')
+        $("#brewery-container").removeClass('hidden')
         $('#event-container').removeClass("w-1/2")
         $('#brewery-container').removeClass("w-1/2")
 
@@ -70,6 +71,7 @@ $(userSelection).on('change', function () {
     //Add event listener to the search button
     searchButton.addEventListener('click', function (event) {
         event.preventDefault()
+        storeSearchData()
         displayAllResults()
     })
 
@@ -77,6 +79,7 @@ $(userSelection).on('change', function () {
     document.addEventListener('keydown', function (event) {
         if (event.key == 13) {
             event.preventDefault()
+            storeSearchData()
             displayAllResults()
         }
     })
@@ -100,7 +103,7 @@ function displayEvents() {
     fetch("https://app.ticketmaster.com/discovery/v2/events.json?&city=" + city + "&size=6&apikey=" + apiKey)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
 
             //Iterate over the length of the available data to extract information about 6 events in a particular city
             for (var i = 0; i < data._embedded.events.length; i++) {
@@ -135,12 +138,12 @@ function displayEvents() {
 
         //Handle error
         .catch(err => {
-            console.log('This is is an error fetching EVENTS data, ' + err)
+            // console.log('This is is an error fetching EVENTS data, ' + err)
 
-            
+
             //Define variable to hold the error message
             var messageheading = document.querySelector('#msg-heading')
-            messageheading.textContent = 'Error! unable to fetch the EVENTS data requested.' + err
+            messageheading.textContent = 'Error! unable to fetch the EVENTS data requested.' + err;
 
             //Set class to dynamically hide and display the two contaiers
             eventsContainer.addClass('hidden')
@@ -207,7 +210,7 @@ function displayBreweries() {
         // Handle error
         .catch(err => {
 
-            console.log('This is is an error fetching BREWERIES data, ' + err)
+            // console.log('This is is an error fetching BREWERIES data, ' + err)
 
             //Define variable to hold the error message
             var messageheading = document.querySelector('#msg-heading')
@@ -216,7 +219,7 @@ function displayBreweries() {
             //Set class to dynamically hide and display the two contaiers
             breweriesContainer.addClass('hidden')
             eventsContainer.removeClass('hidden')
-        
+
             displayModal()
         })
 
@@ -236,7 +239,14 @@ function displayModal() {
     messageModal.removeClass('hidden')
 }
 
-
+//Store user data in local storage
+function storeSearchData() {
+    city = userCitySearch.value.trim()
+    var storeData = JSON.parse(localStorage.getItem('city'))
+        || []
+    storeData.push(city)
+    localStorage.setItem('city', JSON.stringify(storeData))
+}
 
 
 
