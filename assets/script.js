@@ -242,11 +242,17 @@ function displayModal() {
 //Store user data in local storage
 function storeSearchData() {
     city = userCitySearch.value.trim()
-    var storeData = JSON.parse(localStorage.getItem('city'))
-        || []
-    storeData.push(city)
-    localStorage.setItem('city', JSON.stringify(storeData))
+
+    var storeData = JSON.parse(localStorage.getItem('userInput')) || []
+    if (!storeData.some(element => {
+        return element.toLowerCase() === city.toLowerCase()
+    })) {
+        storeData.push(city)
+    }
+    localStorage.setItem('userInput', JSON.stringify(storeData))
 }
+
+
 
 
 
